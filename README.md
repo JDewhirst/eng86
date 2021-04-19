@@ -1,4 +1,4 @@
-# eng86
+# Engineering 86
 
 This repository is the location for all projects done for the C#SDET course at Sparta Global.
 
