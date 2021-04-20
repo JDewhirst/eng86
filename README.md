@@ -1,6 +1,6 @@
 # Engineering 86
 
-This repository is the location for all projects done for the C#SDET course at Sparta Global.
+This repository is the location for all my projects done for the C#SDET course at Sparta Global.
 
 ## Course Sections 
 
