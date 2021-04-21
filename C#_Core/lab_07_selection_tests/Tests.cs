@@ -40,7 +40,7 @@ namespace lab_07_selection_test
 
         [TestCase(101)]
         [TestCase(-1)]
-        public void MarkOver100ThrowsException(int a)
+        public void MarkOutOfBoundsThrowsException(int a)
         {
             Assert.Fail();
             // Assert.Throws<IllegalMarkException>(() => Program.Grade(a);
