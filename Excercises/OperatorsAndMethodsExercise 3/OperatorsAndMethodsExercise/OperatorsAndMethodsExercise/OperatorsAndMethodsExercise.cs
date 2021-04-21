@@ -19,9 +19,8 @@ namespace OperatorAndMethodsExercisesLib
         // Implement this method so that it take a double as an input,
         // squares it, adds 101, divides the result by 7, then subtracts 4.  
         // Return a double rounded to 3 decimal places.
-        public static double BODMAS(double inputNumber)
+        public static double BODMAS(int inputNumber)
         {
-
             return Math.Round((Math.Pow(inputNumber, 2) + 101.0) / 7.0 - 4.0, 3);
         }
 
@@ -39,7 +38,7 @@ namespace OperatorAndMethodsExercisesLib
         public static (int weeks, int days) DaysAndWeeks(int totalDays)
         {
 
-            return (totalDays/7, totalDays%7);
+            return (totalDays / 7, totalDays % 7);
         }
     }
 }
