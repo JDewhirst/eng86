@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using CalculatorLibrary;
 
@@ -67,6 +68,12 @@ namespace calculator_tests
         {
             var result = Calculator.Modulus(num1, num2);
             Assert.AreEqual(expectedResult, result);
+        }
+
+        [Test]
+        public void DivideByZeroThrowsException()
+        {
+            Assert.Throws<DivideByZeroException>( () => Calculator.Divide(1, 0) );
         }
     }
 }
