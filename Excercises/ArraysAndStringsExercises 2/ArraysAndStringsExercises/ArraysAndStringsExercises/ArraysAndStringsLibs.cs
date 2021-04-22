@@ -9,7 +9,7 @@ namespace ArraysAndStringsLib
         // returns a formatted address string given its components
         public static string Address(int number, string street, string city, string postcode)
         {
-            return $"{System.Convert.ToString(number)} {street}, {city} {postcode}.";
+            return $"{number} {street}, {city} {postcode}.";
         }
         // returns a string representing a test score, written as percentage to 1 decimal place
         public static string Scorer(int score, int outOf)
@@ -32,12 +32,12 @@ namespace ArraysAndStringsLib
         public static string ManipulateString(string input, int num)
         {
             // "  Cathy", 10, "CATHY0123456789"
-            var number = string.Empty;
+            var output = string.Empty;
             for (int i = 0; i < num; i++)
             {
-                number = String.Concat(number, i.ToString());
+                output = String.Concat(output, i.ToString());
             }
-            return input.Trim().ToUpper() + number;
+            return input.Trim().ToUpper() + output;
         }
     }
 }

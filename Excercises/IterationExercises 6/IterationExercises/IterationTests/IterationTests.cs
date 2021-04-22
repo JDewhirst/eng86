@@ -19,11 +19,11 @@ namespace IterationTests
         // HighestWhileLoop
 
         [Test]
-        public void WhenTheArrayIsEmptyHighestWhileLoopReturnsMax()
+        public void WhenTheArrayIsEmptyHighestWhileLoopReturnsMin()
         {
             int[] nums = { };
             var result = Highest.HighestWhileLoop(nums);
-            Assert.AreEqual(int.MaxValue, result);
+            Assert.AreEqual(int.MinValue, result);
         }
 
         [Test]
@@ -52,11 +52,11 @@ namespace IterationTests
 
         // HighestForLoop
         [Test]
-        public void WhenTheArrayIsEmptyHighestForLoopReturnsMax()
+        public void WhenTheArrayIsEmptyHighestForLoopReturnsMin()
         {
             int[] nums = { };
             var result = Highest.HighestForLoop(nums);
-            Assert.AreEqual(int.MaxValue, result);
+            Assert.AreEqual(int.MinValue, result);
         }
 
         [Test]
@@ -84,11 +84,11 @@ namespace IterationTests
 
         // HighestForEach
         [Test]
-        public void WhenTheArrayIsEmptyHighestForEachLoopReturnsMax()
+        public void WhenTheArrayIsEmptyHighestForEachLoopReturnsMin()
         {
             int[] nums = { };
             var result = Highest.HighestForEachLoop(nums);
-            Assert.AreEqual(int.MaxValue, result);
+            Assert.AreEqual(int.MinValue, result);
         }
 
         [Test]
@@ -117,11 +117,11 @@ namespace IterationTests
         // HighestDoWhile
 
         [Test]
-        public void WhenTheArrayIsEmptyHighestDoWhilehLoopReturnsMax()
+        public void WhenTheArrayIsEmptyHighestDoWhilehLoopReturnsMin()
         {
             int[] nums = { };
             var result = Highest.HighestDoWhileLoop(nums);
-            Assert.AreEqual(int.MaxValue, result);
+            Assert.AreEqual(int.MinValue, result);
         }
 
         [Test]

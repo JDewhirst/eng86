@@ -16,10 +16,9 @@ namespace IterationLib
         // returns the lowest number in the array nums
         public static int Lowest(int[] nums)
         {
-            if (nums.Length == 0) { return int.MaxValue;  };
 
             int i = 1;
-            int smallest = nums[0];
+            int smallest = Int32.MaxValue;
             while (i < nums.Length)
             {
                 if (nums[i] < smallest) { smallest = nums[i]; }
@@ -55,7 +54,7 @@ namespace IterationLib
                 {
                     if (character == letters[i])
                     {
-                        counts[i] += 1;
+                        counts[i]++;
                     }
                 }
             }

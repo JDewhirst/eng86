@@ -21,7 +21,7 @@ namespace IterationTests
             Assert.AreEqual(int.MaxValue, result);
         }
 
-
+        [Test]
         public void WhenTheArrayContainsEmptyValuesLowestReturnsCorrectResultMax()
         {
             int[] nums = { 550, -291, 43, -55 };
