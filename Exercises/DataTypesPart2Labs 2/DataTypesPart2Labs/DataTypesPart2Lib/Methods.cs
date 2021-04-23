@@ -11,7 +11,9 @@ namespace DataTypesPt2Lib
         public static int AgeAt(DateTime birthDate, DateTime date)
         {
             var age = date - birthDate;
-            return (int)age.Days >= 0 ? (int)(age.Days / 365.25) : throw new ArgumentException("Error - birthDate is in the future");
+            return (int)age.Days >= 0 ? 
+                (int)(age.Days / 365.25) : throw new ArgumentException("Error - birthDate is in the future");
+
         }
 
         public static string FormatDate(DateTime date)

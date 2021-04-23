@@ -22,7 +22,7 @@ namespace CollectionsExercisesLib
                     outputString.Append($", {queue.Dequeue()}");
                     i++;
                 }
-                return outputString.ToString();
+
             }
 
             return outputString.ToString();
@@ -67,11 +67,13 @@ namespace CollectionsExercisesLib
                     }
                 }
             }
+
             var output = new StringBuilder();
             foreach (var item in count)
             {
                 output.Append(item);
             }
+
             return output.ToString();
         }
     }
