@@ -13,10 +13,10 @@ namespace lab_11_wpf_tests
 
         [TestCase(1, 8, 9)]
         [TestCase(0, 0, 0)]
-        [TestCase(int.MaxValue - 1, 1, int.MaxValue)]
-        [TestCase(0, int.MaxValue, int.MaxValue)]
-        [TestCase(int.MinValue, int.MaxValue, -1)] // max 2,147,483,647 //min -2147483648
-        public void AddTest(int num1, int num2, int expectedResult)
+        [TestCase(double.MaxValue - 1, 1, double.MaxValue)]
+        [TestCase(0, double.MaxValue, double.MaxValue)]
+        [TestCase(double.MinValue, double.MaxValue, 0)] // max 2,147,483,647 //min -2147483648
+        public void AddTest(double num1, double num2, double expectedResult)
         {
             var result = Calculator.Add(num1, num2);
             Assert.AreEqual(expectedResult, result);
@@ -25,11 +25,11 @@ namespace lab_11_wpf_tests
         [TestCase(0, 1, -1)]
         [TestCase(0, 0, 0)]
         [TestCase(894, 100, 794)]
-        [TestCase(int.MaxValue, int.MaxValue, 0)]
-        [TestCase(int.MaxValue, 1, int.MaxValue - 1)]
-        [TestCase(0, int.MaxValue, -int.MaxValue)]
-        [TestCase(int.MinValue, int.MaxValue, 1)]
-        public void SubtractTest(int num1, int num2, int expectedResult)
+        [TestCase(double.MaxValue, double.MaxValue, 0)]
+        [TestCase(double.MaxValue, 1, double.MaxValue - 1)]
+        [TestCase(0, double.MaxValue, -double.MaxValue)]
+        //[TestCase(double.MinValue, double.MaxValue, 1)]
+        public void SubtractTest(double num1, double num2, double expectedResult)
         {
             var result = Calculator.Subtract(num1, num2);
             Assert.AreEqual(expectedResult, result);
@@ -38,8 +38,8 @@ namespace lab_11_wpf_tests
         [TestCase(4, 4, 16)]
         [TestCase(60, 60, 3600)]
         [TestCase(-20, -1, 20)]
-        [TestCase(int.MinValue + 1, -1, 2147483647)]
-        public void MultiplyTest(int num1, int num2, int expectedResult)
+        [TestCase(double.MinValue, -1, 1.7976931348623157E+308)]
+        public void MultiplyTest(double num1, double num2, double expectedResult)
         {
             var result = Calculator.Multiply(num1, num2);
             Assert.AreEqual(expectedResult, result);
@@ -50,10 +50,10 @@ namespace lab_11_wpf_tests
         [TestCase(800, 100, 8)]
         [TestCase(-10, -5, 2)]
         [TestCase(-10, 5, -2)]
-        [TestCase(int.MaxValue, int.MinValue, 0)]
-        [TestCase(int.MaxValue, int.MaxValue, 1)]
-        [TestCase(int.MinValue, int.MinValue, 1)]
-        public void DivideTest(int num1, int num2, int expectedResult)
+        [TestCase(double.MaxValue, double.MinValue, -1)]
+        [TestCase(double.MaxValue, double.MaxValue, 1)]
+        [TestCase(double.MinValue, double.MinValue, 1)]
+        public void DivideTest(double num1, double num2, double expectedResult)
         {
             var result = Calculator.Divide(num1, num2);
             Assert.AreEqual(expectedResult, result);
@@ -64,7 +64,7 @@ namespace lab_11_wpf_tests
         [TestCase(5, 5, 0)]
         [TestCase(-10, 6, -4)]
         [TestCase(-10, -6, -4)]
-        public void ModulusTest(int num1, int num2, int expectedResult)
+        public void ModulusTest(double num1, double num2, double expectedResult)
         {
             var result = Calculator.Modulus(num1, num2);
             Assert.AreEqual(expectedResult, result);

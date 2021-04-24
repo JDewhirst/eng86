@@ -5,9 +5,10 @@ namespace CalculatorLib
 {
     public class Calculator
     {
-        private static double _inputValue;
-        private static char _operator = ' ';
-        private static double _result;
+        public static double _inputValue;
+        public static char _operator = ' ';
+        public static double _previousResult;
+        public static double _result;
         public static void Input(string value, char operation )
         {
             bool parsed = double.TryParse(value, out double result);
@@ -23,53 +24,54 @@ namespace CalculatorLib
             }
         }
 
-        public static void Equals()
+        public static Tuple<string, string, string> Execute(string a, string b, string operation) // this needs to return a string.
         {
-            switch (_operator)
+            switch (operation)
             {
-                case(' '):
-                    // Take the input value and put it in the result
-                    break;
-                case ('+'):
+                case(""):
+                    return Tuple.Create( a, b, operation);
+                case ("+"):
                     // do addition
-                    break;
-                case ('-'):
-                    // do subtraction
-                    break;
-                case ('*'):
-                    // do multiplication
-                    break;
-                case ('/'):
-                    // do division
-                    break;
-                case ('%'):
-                    // do modulus
+                    return Tuple.Create(Add(double.Parse(a), double.Parse(b)).ToString(), b, operation);
+                case ("-"):
+                    return Tuple.Create(Subtract(double.Parse(a), double.Parse(b)).ToString(), b, operation);
+                case ("x"):
+                    // do multiplication _result = Multiply(_inputValue, _previousResult)
+                    return Tuple.Create(Multiply(double.Parse(a), double.Parse(b)).ToString(), b, operation);
+                case ("/"):
+                    // do division _result = Divide(_input, _previousResult)
+                    return Tuple.Create(Divide(double.Parse(a), double.Parse(b)).ToString(), b, operation);
+                case ("%"):
+                    // do modulus _result = Modulus(_input, _previousResult)
+                    return Tuple.Create(Modulus(double.Parse(a), double.Parse(b)).ToString(), b, operation);
+                default:
                     break;
             }
+            return Tuple.Create(a, b, operation);
         }
 
-        public static int Add(int x, int y)
+        public static double Add(double x, double y)
         {
             return x + y;
         }
 
-        public static int Subtract(int x, int y)
+        public static double Subtract(double x, double y)
         {
             return x - y;
         }
 
-        public static int Multiply(int x, int y)
+        public static double Multiply(double x, double y)
         {
             return x * y;
         }
 
-        public static int Divide(int x, int y)
+        public static double Divide(double x, double y)
         {
 
             return y == 0 ? throw new ArgumentException("Cannot divide by zero") : x / y;
         }
 
-        public static int Modulus(int x, int y)
+        public static double Modulus(double x, double y)
         {
             return x % y;
         }

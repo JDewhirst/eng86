@@ -21,9 +21,8 @@ namespace lab_11_wpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static StringBuilder _input = new StringBuilder("");
-        private static StringBuilder _operator = new StringBuilder("");
-        private static StringBuilder _result = new StringBuilder("");
+        private static StringBuilder _input = new StringBuilder();
+        private static string operation = string.Empty;
 
         public MainWindow()
         {
@@ -32,71 +31,270 @@ namespace lab_11_wpf
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            _input.Append("1");
-            LabelInput.Content = _input.ToString();
+            if ( (string)LabelResult.Content == " " )
+            {
+                _input.Append('1');
+                LabelInput.Content = _input.ToString();
+            }
+            else
+            {
+                LabelPrevResult.Content = LabelResult.Content;
+                LabelResult.Content = " ";
+                _input.Clear();
+                _input.Append('1');
+                LabelInput.Content = _input.ToString();
+            }
         }
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
-            _input.Append("2");
-            LabelInput.Content = _input.ToString();
+            if ((string)LabelResult.Content == " ")
+            {
+                _input.Append('2');
+                LabelInput.Content = _input.ToString();
+            }
+            else
+            {
+                LabelPrevResult.Content = LabelResult.Content;
+                LabelResult.Content = " ";
+                _input.Clear();
+                _input.Append('2');
+                LabelInput.Content = _input.ToString();
+            }
         }
         private void Button3_Click(object sender, RoutedEventArgs e)
         {
-            _input.Append("3");
-            LabelInput.Content = _input.ToString();
+            if ((string)LabelResult.Content == " ")
+            {
+                _input.Append('3');
+                LabelInput.Content = _input.ToString();
+            }
+            else
+            {
+                LabelPrevResult.Content = LabelResult.Content;
+                LabelResult.Content = " ";
+                _input.Clear();
+                _input.Append('3');
+                LabelInput.Content = _input.ToString();
+            }
         }
         private void Button4_Click(object sender, RoutedEventArgs e)
         {
-            _input.Append("4");
-            LabelInput.Content = _input.ToString();
+            if ((string)LabelResult.Content == " ")
+            {
+                _input.Append('4');
+                LabelInput.Content = _input.ToString();
+            }
+            else
+            {
+                LabelPrevResult.Content = LabelResult.Content;
+                LabelResult.Content = " ";
+                _input.Clear();
+                _input.Append('4');
+                LabelInput.Content = _input.ToString();
+            }
         }
         private void Button5_Click(object sender, RoutedEventArgs e)
         {
-            _input.Append("5");
-            LabelInput.Content = _input.ToString();
+            if ((string)LabelResult.Content == " ")
+            {
+                _input.Append('5');
+                LabelInput.Content = _input.ToString();
+            }
+            else
+            {
+                LabelPrevResult.Content = LabelResult.Content;
+                LabelResult.Content = " ";
+                _input.Clear();
+                _input.Append('5');
+                LabelInput.Content = _input.ToString();
+            }
         }
         private void Button6_Click(object sender, RoutedEventArgs e)
         {
-            _input.Append("6");
-            LabelInput.Content = _input.ToString();
+            if ((string)LabelResult.Content == " ")
+            {
+                _input.Append('6');
+                LabelInput.Content = _input.ToString();
+            }
+            else
+            {
+                LabelPrevResult.Content = LabelResult.Content;
+                LabelResult.Content = " ";
+                _input.Clear();
+                _input.Append('6');
+                LabelInput.Content = _input.ToString();
+            }
         }
         private void Button7_Click(object sender, RoutedEventArgs e)
         {
-            _input.Append("7");
-            LabelInput.Content = _input.ToString();
+            if ((string)LabelResult.Content == " ")
+            {
+                _input.Append('7');
+                LabelInput.Content = _input.ToString();
+            }
+            else
+            {
+                LabelPrevResult.Content = LabelResult.Content;
+                LabelResult.Content = " ";
+                _input.Clear();
+                _input.Append('7');
+                LabelInput.Content = _input.ToString();
+            }
         }
         private void Button8_Click(object sender, RoutedEventArgs e)
         {
-            _input.Append("8");
-            LabelInput.Content = _input.ToString();
+            if ((string)LabelResult.Content == " ")
+            {
+                _input.Append('8');
+                LabelInput.Content = _input.ToString();
+            }
+            else
+            {
+                LabelPrevResult.Content = LabelResult.Content;
+                LabelResult.Content = " ";
+                _input.Clear();
+                _input.Append('8');
+                LabelInput.Content = _input.ToString();
+            }
         }
 
         private void Button9_Click(object sender, RoutedEventArgs e)
         {
-            _input.Append("9");
-            LabelInput.Content = _input.ToString();
+            if ((string)LabelResult.Content == " ")
+            {
+                _input.Append('9');
+                LabelInput.Content = _input.ToString();
+            }
+            else
+            {
+                LabelPrevResult.Content = LabelResult.Content;
+                LabelResult.Content = " ";
+                _input.Clear();
+                _input.Append('9');
+                LabelInput.Content = _input.ToString();
+            }
         }
 
         private void Button0_Click(object sender, RoutedEventArgs e)
         {
-            _input.Append("0");
+            if ((string)LabelResult.Content == " ")
+            {
+                _input.Append('0');
+                LabelInput.Content = _input.ToString();
+            }
+            else
+            {
+                LabelPrevResult.Content = LabelResult.Content;
+                LabelResult.Content = " ";
+                _input.Clear();
+                _input.Append('0');
+                LabelInput.Content = _input.ToString();
+            }
+        }
+
+        private void ButtonDot_click(object sender, RoutedEventArgs e)
+        {
+            _input.Append('.');
             LabelInput.Content = _input.ToString();
         }
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
-            _operator.Clear();
-            _operator.Append("+");
-            // _result = Calculator.Add(_input
-            LabelResult.Content = $"{_input.ToString()} {_operator.ToString()}"; // what I actually want here is for the input to be evaluated and output.
-            _input.Clear();
-            _input.Append("0");
-            LabelInput.Content = _input;
+            // if there is no previous result, make the previous result the input, make the operator the +
+            if (LabelPrevResult.Content.ToString() == " ")
+            {
+                LabelOperator.Content = "+";
+                LabelPrevResult.Content = LabelInput.Content;
+                LabelInput.Content = "0";
+                _input.Clear();
+            }
+            else
+            {
+                LabelOperator.Content = "+";
+                Tuple<string, string, string> results = Calculator.Execute(LabelInput.Content.ToString(), LabelPrevResult.Content.ToString(), "+");
+                LabelResult.Content = results.Item1;
+            }
+
         }
 
         private void ButtonEqual_Click(object sender, RoutedEventArgs e)
         {
+            // call the calculator Execute method which takes two number strings, and an operator. It outputs a number string.
+            Tuple<string, string, string> results = Calculator.Execute(LabelInput.Content.ToString(), LabelPrevResult.Content.ToString(), LabelOperator.Content.ToString());
+            LabelResult.Content = results.Item1;
+        }
+
+        private void ButtonModulus_Click(object sender, RoutedEventArgs e)
+        {
+            if (LabelPrevResult.Content.ToString() == " ")
+            {
+                LabelOperator.Content = "%";
+                LabelPrevResult.Content = LabelInput.Content;
+                LabelInput.Content = "0";
+                _input.Clear();
+            }
+            else
+            {
+                LabelOperator.Content = "%";
+                Tuple<string, string, string> results = Calculator.Execute(LabelInput.Content.ToString(), LabelPrevResult.Content.ToString(), "%");
+                LabelResult.Content = results.Item1;
+            }
 
         }
+
+        private void ButtonSubtract_Click(object sender, RoutedEventArgs e)
+        {
+            if (LabelPrevResult.Content.ToString() == " ")
+            {
+                LabelOperator.Content = "-";
+                LabelPrevResult.Content = LabelInput.Content;
+                LabelInput.Content = "0";
+                _input.Clear();
+            }
+            else
+            {
+                LabelOperator.Content = "-";
+                Tuple<string, string, string> results = Calculator.Execute(LabelInput.Content.ToString(), LabelPrevResult.Content.ToString(), "-");
+                LabelResult.Content = results.Item1;
+            }
+
+        }
+
+        private void ButtonDivide_Click(object sender, RoutedEventArgs e)
+        {
+            if (LabelPrevResult.Content.ToString() == " ")
+            {
+                LabelOperator.Content = "/";
+                LabelPrevResult.Content = LabelInput.Content;
+                LabelInput.Content = "0";
+                _input.Clear();
+            }
+            else
+            {
+                LabelOperator.Content = "/";
+                Tuple<string, string, string> results = Calculator.Execute(LabelInput.Content.ToString(), LabelPrevResult.Content.ToString(), "/");
+                LabelResult.Content = results.Item1;
+            }
+
+        }
+
+        private void ButtonMultiply_Click(object sender, RoutedEventArgs e)
+        {
+            if (LabelPrevResult.Content.ToString() == " ")
+            {
+                LabelOperator.Content = "x";
+                LabelPrevResult.Content = LabelInput.Content;
+                LabelInput.Content = "0";
+                _input.Clear();
+            }
+            else
+            {
+                LabelOperator.Content = "x";
+                Tuple<string, string, string> results = Calculator.Execute(LabelInput.Content.ToString(), LabelPrevResult.Content.ToString(), "x");
+                LabelResult.Content = results.Item1;
+            }
+
+        }
+
     }
 }
