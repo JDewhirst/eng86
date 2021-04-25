@@ -211,7 +211,7 @@ namespace lab_11_wpf
             else
             {
                 LabelOperator.Content = "+";
-                Tuple<string, string, string> results = Calculator.Execute(LabelInput.Content.ToString(), LabelPrevResult.Content.ToString(), "+");
+                Tuple<string, string, string> results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "+");
                 LabelResult.Content = results.Item1;
             }
 
@@ -220,8 +220,21 @@ namespace lab_11_wpf
         private void ButtonEqual_Click(object sender, RoutedEventArgs e)
         {
             // call the calculator Execute method which takes two number strings, and an operator. It outputs a number string.
-            Tuple<string, string, string> results = Calculator.Execute(LabelInput.Content.ToString(), LabelPrevResult.Content.ToString(), LabelOperator.Content.ToString());
-            LabelResult.Content = results.Item1;
+            if (LabelResult.Content.ToString() == " ")
+            {
+                Tuple<string, string, string> results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), LabelOperator.Content.ToString());
+                LabelResult.Content = results.Item1;
+                LabelPrevResult.Content = _input.ToString();
+                LabelInput.Content = " ";
+                _input.Clear();
+            }
+            else
+            {
+                LabelPrevResult.Content = LabelResult.Content;
+                LabelResult.Content = " ";
+                _input.Clear();
+                LabelInput.Content = " ";
+            }
         }
 
         private void ButtonModulus_Click(object sender, RoutedEventArgs e)
@@ -236,7 +249,7 @@ namespace lab_11_wpf
             else
             {
                 LabelOperator.Content = "%";
-                Tuple<string, string, string> results = Calculator.Execute(LabelInput.Content.ToString(), LabelPrevResult.Content.ToString(), "%");
+                Tuple<string, string, string> results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "%");
                 LabelResult.Content = results.Item1;
             }
 
@@ -254,7 +267,7 @@ namespace lab_11_wpf
             else
             {
                 LabelOperator.Content = "-";
-                Tuple<string, string, string> results = Calculator.Execute(LabelInput.Content.ToString(), LabelPrevResult.Content.ToString(), "-");
+                Tuple<string, string, string> results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "-");
                 LabelResult.Content = results.Item1;
             }
 
@@ -272,7 +285,7 @@ namespace lab_11_wpf
             else
             {
                 LabelOperator.Content = "/";
-                Tuple<string, string, string> results = Calculator.Execute(LabelInput.Content.ToString(), LabelPrevResult.Content.ToString(), "/");
+                Tuple<string, string, string> results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "/");
                 LabelResult.Content = results.Item1;
             }
 
@@ -290,11 +303,25 @@ namespace lab_11_wpf
             else
             {
                 LabelOperator.Content = "x";
-                Tuple<string, string, string> results = Calculator.Execute(LabelInput.Content.ToString(), LabelPrevResult.Content.ToString(), "x");
+                Tuple<string, string, string> results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "x");
                 LabelResult.Content = results.Item1;
             }
 
         }
 
+        private void ButtonCancelEverything_Click(object sender, RoutedEventArgs e)
+        {
+            _input.Clear();
+            LabelOperator.Content = " ";
+            LabelPrevResult.Content = " ";
+            LabelResult.Content = " ";
+            LabelInput.Content = _input.ToString();
+        }
+
+        private void ButtonCancelInput_Click(object sender, RoutedEventArgs e)
+        {
+            _input.Clear();
+            LabelInput.Content = _input.ToString();
+        }
     }
 }
