@@ -40,7 +40,15 @@ namespace CalculatorLib
                     return Multiply(double.Parse(a), double.Parse(b)).ToString();
                 case ("/"):
                     // do division _result = Divide(_input, _previousResult)
-                    return Divide(double.Parse(a), double.Parse(b)).ToString();
+                    if (a == " ") { a = "0"; }
+                    try
+                    {
+                        return Divide(double.Parse(a), double.Parse(b)).ToString();
+                    }
+                    catch (ArgumentException e)
+                    {
+                        return e.Message;
+                    }
                 case ("%"):
                     // do modulus _result = Modulus(_input, _previousResult)
                     return Modulus(double.Parse(a), double.Parse(b)).ToString();
