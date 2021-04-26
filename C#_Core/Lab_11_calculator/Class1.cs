@@ -24,30 +24,30 @@ namespace CalculatorLib
             }
         }
 
-        public static Tuple<string, string, string> Execute(string a, string b, string operation) // this needs to return a string.
+        public static string Execute(string a, string b, string operation) // this needs to return a string.
         {
             switch (operation)
             {
                 case(""):
-                    return Tuple.Create( a, b, operation);
+                    return a;
                 case ("+"):
                     // do addition
-                    return Tuple.Create(Add(double.Parse(a), double.Parse(b)).ToString(), b, operation);
+                    return Add(double.Parse(a), double.Parse(b)).ToString();
                 case ("-"):
-                    return Tuple.Create(Subtract(double.Parse(a), double.Parse(b)).ToString(), b, operation);
+                    return Subtract(double.Parse(a), double.Parse(b)).ToString();
                 case ("x"):
                     // do multiplication _result = Multiply(_inputValue, _previousResult)
-                    return Tuple.Create(Multiply(double.Parse(a), double.Parse(b)).ToString(), b, operation);
+                    return Multiply(double.Parse(a), double.Parse(b)).ToString();
                 case ("/"):
                     // do division _result = Divide(_input, _previousResult)
-                    return Tuple.Create(Divide(double.Parse(a), double.Parse(b)).ToString(), b, operation);
+                    return Divide(double.Parse(a), double.Parse(b)).ToString();
                 case ("%"):
                     // do modulus _result = Modulus(_input, _previousResult)
-                    return Tuple.Create(Modulus(double.Parse(a), double.Parse(b)).ToString(), b, operation);
+                    return Modulus(double.Parse(a), double.Parse(b)).ToString();
                 default:
                     break;
             }
-            return Tuple.Create(a, b, operation);
+            return a;
         }
 
         public static double Add(double x, double y)

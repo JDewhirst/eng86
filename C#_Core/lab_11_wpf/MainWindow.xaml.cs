@@ -211,8 +211,8 @@ namespace lab_11_wpf
             else
             {
                 LabelOperator.Content = "+";
-                Tuple<string, string, string> results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "+");
-                LabelResult.Content = results.Item1;
+                string results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "+");
+                LabelResult.Content = results;
             }
 
         }
@@ -222,8 +222,8 @@ namespace lab_11_wpf
             // call the calculator Execute method which takes two number strings, and an operator. It outputs a number string.
             if (LabelResult.Content.ToString() == " ")
             {
-                Tuple<string, string, string> results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), LabelOperator.Content.ToString());
-                LabelResult.Content = results.Item1;
+                string results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), LabelOperator.Content.ToString());
+                LabelResult.Content = results;
                 LabelPrevResult.Content = _input.ToString();
                 LabelInput.Content = " ";
                 _input.Clear();
@@ -249,8 +249,8 @@ namespace lab_11_wpf
             else
             {
                 LabelOperator.Content = "%";
-                Tuple<string, string, string> results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "%");
-                LabelResult.Content = results.Item1;
+                string results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "%");
+                LabelResult.Content = results;
             }
 
         }
@@ -267,8 +267,8 @@ namespace lab_11_wpf
             else
             {
                 LabelOperator.Content = "-";
-                Tuple<string, string, string> results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "-");
-                LabelResult.Content = results.Item1;
+                string results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "-");
+                LabelResult.Content = results;
             }
 
         }
@@ -285,8 +285,8 @@ namespace lab_11_wpf
             else
             {
                 LabelOperator.Content = "/";
-                Tuple<string, string, string> results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "/");
-                LabelResult.Content = results.Item1;
+                string results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "/");
+                LabelResult.Content = results;
             }
 
         }
@@ -303,8 +303,8 @@ namespace lab_11_wpf
             else
             {
                 LabelOperator.Content = "x";
-                Tuple<string, string, string> results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "x");
-                LabelResult.Content = results.Item1;
+                string results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), "x");
+                LabelResult.Content = results;
             }
 
         }
@@ -322,6 +322,7 @@ namespace lab_11_wpf
         {
             _input.Clear();
             LabelInput.Content = _input.ToString();
+            LabelResult.Content = " ";
         }
     }
 }
