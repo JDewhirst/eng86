@@ -10,7 +10,7 @@ A variable in C# has a specific type, which determines it's size, what can be st
 
 C# naming conventions, variables start with a letter or underscore. Convention to use PascalCase for most types, camelCase for method parameters and local variables.
 
-Comments - DAMP.  Descriptive And Meaningful Names. Favour readibility over brevity.
+Comments - DAMP.  Descriptive And Meaningful Names. Favour readability over brevity.
 
  DRY Don't Repeat Yourself
 
@@ -32,7 +32,7 @@ C# is strongly typed, *most of the time*. There is a keyword dynamic which allow
 
 ### Strongly Typed
 
-**Static:** Type is known at compile time, space occupied is known, what operations are allowed is known. Allows compile-time type checking: type is checked at compile time.
+**Static:** Type is known at compile time, space occupied is known, which operations are allowed is known. Allows compile-time type checking.
 
 **Type Safe:** Prevents values of one type being substituted for another incompatible type.
 

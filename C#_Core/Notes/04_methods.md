@@ -6,7 +6,7 @@ Unit tests; Adding a test project, the test environment, test setup, test parame
 
 ## Methods
 
-Code blocks that only run when they're called. You can pass data, known as parameters, into a method. Methods are used to perform certain actions, also known as functions.
+Code blocks that only run when they're called. You can pass data, known as parameters, into a method. Methods are used to perform certain actions. Also known as functions.
 
 Methods are useful for reusable code, define it once and use it many times.
 

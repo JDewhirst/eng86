@@ -4,7 +4,7 @@ BODMAS - obviously
 
 ## C# Operators by Precedence
 
-* Primary: x++, x--, a[], x.y, new typof
+* Primary: x++, x--, a[], x.y, new type-of
 * unary: +x, -x, !x, ~x ,++x ,(T)x
 * multiplicative: x*y, x/y, x%y
 * additive: x+y, x-y
@@ -37,7 +37,7 @@ The division operator.  int/int will return an int. If mixing ints and floats it
 
 Operands can be any integral or floating-point type. The result is a boolean (true or false).
 
-== equal to, != not equal to, < less than, > greater than, <=  less than or equal to, >= greater than or eqaul to.
+== equal to, != not equal to, < less than, > greater than, <=  less than or equal to, >= greater than or equal to.
 
 If either operand is NaN the result is false (for all except !=)
 
@@ -45,9 +45,9 @@ If either operand is NaN the result is false (for all except !=)
 
 Binary logical operators can have to boolean operands, and return a boolean result.
 
-x && y returns false if x is false
+x && y returns false if x is false without checking y
 
-x || y returns true if x is true
+x || y returns true if x is true without checking y
 
 These are 'shortcircuiting'
 
