@@ -26,35 +26,48 @@ namespace CalculatorLib
 
         public static string Execute(string a, string b, string operation) // this needs to return a string.
         {
-            switch (operation)
+            var num1Parse = double.TryParse(a, out double num1);
+            var num2Parse = double.TryParse(b, out double num2);
+
+            if (!num1Parse || !num2Parse)
             {
-                case(""):
-                    return a;
-                case ("+"):
-                    // do addition
-                    return Add(double.Parse(a), double.Parse(b)).ToString();
-                case ("-"):
-                    return Subtract(double.Parse(a), double.Parse(b)).ToString();
-                case ("x"):
-                    // do multiplication _result = Multiply(_inputValue, _previousResult)
-                    return Multiply(double.Parse(a), double.Parse(b)).ToString();
-                case ("/"):
-                    // do division _result = Divide(_input, _previousResult)
-                    if (a == " ") { a = "0"; }
-                    try
-                    {
-                        return Divide(double.Parse(a), double.Parse(b)).ToString();
-                    }
-                    catch (ArgumentException e)
-                    {
-                        return e.Message;
-                    }
-                case ("%"):
-                    // do modulus _result = Modulus(_input, _previousResult)
-                    return Modulus(double.Parse(a), double.Parse(b)).ToString();
-                default:
-                    break;
+                return "Incorrect String Format";
             }
+            else
+            {
+                switch (operation)
+                {
+                    case (""):
+                        return a;
+                    case ("+"):
+                        // do addition
+                        return Add(num1, num2).ToString();
+                    case ("-"):
+                        return Subtract(num1, num2).ToString();
+                    case ("x"):
+                        // do multiplication _result = Multiply(_inputValue, _previousResult)
+                        return Multiply(num1, num2).ToString();
+                    case ("/"):
+                        // do division _result = Divide(_input, _previousResult)
+                        if (a == " ") { a = "0"; }
+
+                        try
+                        {
+                            return Divide(num1, num2).ToString();
+                        }
+                        catch (ArgumentException e)
+                        {
+                            return e.Message;
+                        }
+                    case ("%"):
+                        // do modulus _result = Modulus(_input, _previousResult)
+                        return Modulus(num1, num2).ToString();
+                    default:
+                        break;
+                }
+
+            }
+
             return a;
         }
 
