@@ -77,21 +77,20 @@ namespace lab_11_wpf
 
         private void ButtonEqual_Click(object sender, RoutedEventArgs e)
         {
-            // call the calculator Execute method which takes two number strings, and an operator. It outputs a number string.
             if (LabelResult.Content.ToString() == " ")
             {
                 if (LabelPrevResult.Content.ToString() == " ")
                 {
                     LabelPrevResult.Content = _input.ToString();
                     _input.Clear();
-                    LabelInput.Content = _input.ToString();
+                    LabelInput.Content = "0";
                 }
                 else
                 {
                     string results = Calculator.Execute(LabelPrevResult.Content.ToString(), LabelInput.Content.ToString(), LabelOperator.Content.ToString());
                     LabelResult.Content = results;
                     LabelPrevResult.Content = _input.ToString();
-                    LabelInput.Content = " ";
+                    LabelInput.Content = "0";
                     _input.Clear();
                 }
             }
@@ -100,7 +99,7 @@ namespace lab_11_wpf
                 LabelPrevResult.Content = LabelResult.Content;
                 LabelResult.Content = " ";
                 _input.Clear();
-                LabelInput.Content = " ";
+                LabelInput.Content = "0";
             }
         }
 
@@ -110,13 +109,13 @@ namespace lab_11_wpf
             LabelOperator.Content = " ";
             LabelPrevResult.Content = " ";
             LabelResult.Content = " ";
-            LabelInput.Content = _input.ToString();
+            LabelInput.Content = "0";
         }
 
         private void ButtonCancelInput_Click(object sender, RoutedEventArgs e)
         {
             _input.Clear();
-            LabelInput.Content = _input.ToString();
+            LabelInput.Content = "0";
             LabelResult.Content = " ";
         }
     }

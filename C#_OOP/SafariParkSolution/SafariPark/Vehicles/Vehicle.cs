@@ -8,9 +8,9 @@ namespace SafariPark
 {
     public class Vehicle
     {
-        private int _capacity = 4;
-        private int _numPassengers;
-        private int _speed;
+        protected int _capacity;
+        protected int _numPassengers;
+        protected int _speed = 10;
 
         public int NumPassengers 
         {
@@ -31,13 +31,9 @@ namespace SafariPark
                 }
             }
         }
-        public int Position { get; private set; }
+        public int Position { get; protected set; }
 
-        public Vehicle()
-        {
-            _speed = 10;
-
-        }
+        public Vehicle(){}
 
         public Vehicle(int capacity, int speed = 10 )
         {
@@ -45,19 +41,24 @@ namespace SafariPark
             _capacity = capacity;
         }
 
-        public string Move()
+        public virtual string Move()
         {
             Position += _speed;
             return $"Moving along";
 
         }
 
-        public string Move(int times)
+        public virtual string Move(int times)
         {
             Position += times * _speed;
             return $"Moving along {times} times";
         }
 
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
 
 
     }

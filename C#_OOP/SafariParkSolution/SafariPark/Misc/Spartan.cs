@@ -10,7 +10,7 @@ namespace SafariPark
     {
         public string FirstName { get; init; }
         public string LastName { get; init; }
-        public int Age { get; }
+        public int Age { get; init; }
 
         //public Spartan(string fName, string lName, int age)
         //{

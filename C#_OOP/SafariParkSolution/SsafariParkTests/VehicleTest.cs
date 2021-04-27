@@ -23,12 +23,13 @@ namespace SafariParkTests
             Assert.AreEqual("Moving along", result);
         }
 
-        [Test]
-        public void WhenAVehicleRecievesTooManyPassengersItFillsToCapacity()
+        [TestCase(10,3,3)]
+        [TestCase(4,1,1)]
+        public void WhenAVehicleRecievesTooManyPassengersItFillsToCapacity(int numPassengers, int capacity, int expected)
         {
-            Vehicle v = new Vehicle();
-            v.NumPassengers = 10;
-            Assert.AreEqual(4, v.NumPassengers);
+            Vehicle v = new Vehicle(capacity);
+            v.NumPassengers = numPassengers;
+            Assert.AreEqual(expected, v.NumPassengers);
         }
 
         [Test]

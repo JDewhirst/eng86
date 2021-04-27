@@ -26,16 +26,21 @@ namespace SafariPark
             _lastName = lName;
         }
 
-        public Person(string fName, string lName, int age)
-        {
-            _firstName = fName;
-            _lastName = lName;
-            Age = age;
-        }
+        //public Person(string fName, string lName, int age)
+        //{
+        //    _firstName = fName;
+        //    _lastName = lName;
+        //    Age = age;
+        //}
 
         public string GetFullName()
         {
             return $"{_firstName} {_lastName}";
+        }
+
+        public override string ToString()
+        {
+            return $"{base.ToString()} Name: {GetFullName()} Age: {Age}";
         }
     }
 }
