@@ -94,6 +94,17 @@ namespace SafariPark
             //};
             //movableObjects.ForEach(x => Console.WriteLine(x.Move()));
 
+            //// <Weapon>/<IShootable> demonstration
+            var weaponList = new List<IShootable>()
+            {
+                 new WaterPistol("Nerf Super Soaker Zipfire")
+                 , new LaserGun("General Atomics AER9")
+                 , new Hunter("John", "Wayne", "Nikon")
+                 , new Hunter("Richard", "Deckard", "Canon")
+                 , new Camera("Fujifilm")
+            };
+            weaponList.ForEach(x => Console.WriteLine(x.Shoot()));
+
         }
 
         static void SpartaWrite(Object obj)

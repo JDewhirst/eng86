@@ -36,7 +36,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SafariPark.Weapon">
-    <Position X="13.75" Y="3.75" Width="1.5" />
+    <Position X="13.25" Y="3.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAFAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapon.cs</FileName>
