@@ -9,6 +9,7 @@ namespace SafariPark
     public class Camera : IShootable
     {
         private string _brand;
+        public int Volume { get; set; }
 
         public Camera(string brand)
         {
@@ -17,7 +18,7 @@ namespace SafariPark
 
         public string Shoot()
         {
-            return $"photo taken with {_brand} camera.";
+            return $"Flash from {_brand} camera.";
         }
     }
 }

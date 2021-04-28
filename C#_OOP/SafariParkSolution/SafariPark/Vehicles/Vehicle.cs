@@ -16,18 +16,7 @@ namespace SafariPark
             get { return _numPassengers; }
             set
             {
-                if (value < 0)
-                {
-                    _numPassengers = 0;
-                }
-                else if (value > _capacity)
-                {
-                    _numPassengers = _capacity;
-                }
-                else
-                {
-                    _numPassengers = value;
-                }
+                _numPassengers = value < 0 ? 0 : value > _capacity ? _capacity : value;
             }
         }
         public int Position { get; protected set; }

@@ -125,8 +125,8 @@ namespace SafariPark
             // Weapons
             var weaponList = new List<IShootable>()
             {
-                  new WaterPistol("Nerf Super Soaker Zipfire")
-                 , new LaserGun("General Atomics AER9")
+                  new WaterPistol("Nerf Super Soaker Zipfire", 4)
+                 , new LaserGun("General Atomics AER9", 10)
                  , new Camera("Fujifilm")
             };
 
@@ -136,6 +136,7 @@ namespace SafariPark
             string lName = Console.ReadLine();
 
             Hunter player = new Hunter(fName, lName, weaponList[0]);
+            Gazelle gazelle = new Gazelle(60);
 
             bool gameOn = true;
 
@@ -147,20 +148,16 @@ namespace SafariPark
                 switch (command)
                 {
                     case "1":
-                        //Console.WriteLine("Left (L) or Right (R) ?");
-                        //command = Console.ReadLine();
-                        //if (command == "L")
-                        //{
                         Console.WriteLine(player.Move());
-                        //}
                         break;
                     case "2":
                         Console.WriteLine(player.Shoot());
+                        Console.WriteLine(gazelle.FightOrFlight(player.Shooter.Volume));
                         break;
                     case "3":
                         weaponList.ForEach(x => Console.WriteLine( x.ToString() ) ) ;
                         int weapon = int.Parse(Console.ReadLine());
-                        player.Shooter = weaponList[weapon];
+                        player.Shooter = weaponList[weapon-1];
                         break;
                     case "4":
                         Console.WriteLine("Are you sure ? (Y/N)");
@@ -174,22 +171,6 @@ namespace SafariPark
             }
 
         }
-
-        //static void SpartaWrite(Object obj)
-        //{
-        //    Console.WriteLine(obj);
-        //    if (obj is Hunter)
-        //    {
-        //        var hunterObj = (Hunter)obj;
-        //        Console.WriteLine(hunterObj.Shoot());
-        //    }
-        //}
-
-        //static void DemoMethod(Point3d pt, Person p)
-        //{
-        //    pt.y = 1000;
-        //    p.Age = 92;
-        //}
 
     }
 }
