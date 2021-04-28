@@ -26,13 +26,6 @@ namespace SafariPark
             _lastName = lName;
         }
 
-        //public Person(string fName, string lName, int age)
-        //{
-        //    _firstName = fName;
-        //    _lastName = lName;
-        //    Age = age;
-        //}
-
         public string GetFullName()
         {
             return $"{_firstName} {_lastName}";

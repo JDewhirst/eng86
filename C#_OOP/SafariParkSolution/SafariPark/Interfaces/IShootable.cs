@@ -1,6 +1,6 @@
 ﻿namespace SafariPark
 {
-    interface IShootable
+    public interface IShootable
     {
         public string Shoot();
     }
