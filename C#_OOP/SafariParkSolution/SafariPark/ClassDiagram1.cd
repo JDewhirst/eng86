@@ -10,7 +10,7 @@
   <Class Name="SafariPark.Vehicle">
     <Position X="7.25" Y="3.75" Width="4.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAoAAAAAkEAAAAAQAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAoAAAAAkEAAAAAQBAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Vehicles\Vehicle.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -28,8 +28,29 @@
   <Class Name="SafariPark.Airplane">
     <Position X="7.5" Y="7.75" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIABAIAAAAAAAAAAAgAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <HashCode>QAAAAIAAAIAAAAAEAAAAgAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Vehicles\Airplane.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SafariPark.Weapon">
+    <Position X="13.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SafariPark.LaserGun">
+    <Position X="15.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SafariPark.WaterPistol">
+    <Position X="12.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9.16" />

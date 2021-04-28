@@ -13,6 +13,26 @@ namespace SafariParkTests
 
         //}
 
+        [TestCase(100,100)]
+        [TestCase(0, 0)]
+        [TestCase(int.MaxValue, int.MaxValue)]
+        public void AirplaneAscendTest(int distance, int expected)
+        {
+            Airplane a = new Airplane(100, 20, "SaharaAir");
+            a.Ascend(distance);
+            Assert.AreEqual(expected, a.Altitude);
+        }
+
+        [TestCase(100, 900)]
+        [TestCase(0, 1000)]
+        public void AirplaneDescendTest(int distance, int expected)
+        {
+            Airplane a = new Airplane(100, 20, "SaharaAir");
+            a.Ascend(1000);
+            a.Descend(distance);
+            Assert.AreEqual(expected, a.Altitude);
+        }
+
         [Test]
         public void WhenAnAirplaneDescendsBelow0ItThrowsArgumentException()
         {

@@ -31,4 +31,6 @@ You may also cancel any inputs you have entered by pressing the C key. This will
 ## FAQ
 
 1. Handling divide by zero
+   1. Attempting to divide by zero results in the output of an error. In this state cancel your input to avoid further errors.
 2. Incorrect string inputs
+   1. Inputting an incorrect string such as "876.23.11" which is not a valid number results in the output of an error. In this state press the clear everything button to proceed.
