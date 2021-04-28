@@ -7,116 +7,127 @@ namespace SafariPark
     {
         static void Main(string[] args)
         {
-            //Person cathy = new Person("Cathy", "French");
-            //Console.WriteLine(cathy.GetFullName());
 
-            //cathy.Age = -1;
-            //Console.WriteLine("Cath's Age:s " + cathy.Age);
-            //cathy.Age = 26;
-            //Console.WriteLine("Cath's Age:s " + cathy.Age);
+            {//Person cathy = new Person("Cathy", "French");
+             //Console.WriteLine(cathy.GetFullName());
 
-            //Person nish; // declaring nish before they're constructed. value will be null
-            //nish = new Person("Nish", "Mandal");
-            //Console.WriteLine(nish.GetFullName());
+                //cathy.Age = -1;
+                //Console.WriteLine("Cath's Age:s " + cathy.Age);
+                //cathy.Age = 26;
+                //Console.WriteLine("Cath's Age:s " + cathy.Age);
 
-            ////var sparta = new Spartan("Nish", "Mandal", 30);
-            //var spartan = new Spartan { FirstName = "Nish", LastName = "Mandal Age = 30" };
-            //var age = spartan.Age;
+                //Person nish; // declaring nish before they're constructed. value will be null
+                //nish = new Person("Nish", "Mandal");
+                //Console.WriteLine(nish.GetFullName());
 
-            //var rouz = new Person();
-            //var callum = new Person("Callum", "Harding");
-            //var michael = new Person("Michael", "Wilcock", 22);
+                ////var sparta = new Spartan("Nish", "Mandal", 30);
+                //var spartan = new Spartan { FirstName = "Nish", LastName = "Mandal Age = 30" };
+                //var age = spartan.Age;
 
-            //var hamse = new Person("Hamse", "Ahmed") { Age = 21 };
+                //var rouz = new Person();
+                //var callum = new Person("Callum", "Harding");
+                //var michael = new Person("Michael", "Wilcock", 22);
 
-            //var shopList = new ShoppingList { Bread = 2, Milk = 10, Potato = 1 };
+                //var hamse = new Person("Hamse", "Ahmed") { Age = 21 };
 
-            //// Structs
-            //Point3d p;
+                //var shopList = new ShoppingList { Bread = 2, Milk = 10, Potato = 1 };
 
-            //Person paul = new Person("Paul", "Mcartney") { Age = 80 };
-            //Point3d pt3d = new Point3d(5, 8, 2);
-            //DemoMethod(pt3d, paul);
+                //// Structs
+                //Point3d p;
 
-            ///*Hunter h = new Hunter("Hossain", "Ghazal", "Leica") { Age = 22 };*/
-            //Console.WriteLine(h.Age);
-            //Console.WriteLine(h.Shoot());
-            //Hunter h = new Hunter("Hossain", "Ghazal", "Leica") { Age = 22 };
-            //Hunter h2 = new Hunter("Hossain", "Ghazal", "Leica") { Age = 22 };
+                //Person paul = new Person("Paul", "Mcartney") { Age = 80 };
+                //Point3d pt3d = new Point3d(5, 8, 2);
+                //DemoMethod(pt3d, paul);
 
-            //Console.WriteLine($"{h} Equals {h2}? {h.Equals(h2)}");
-            //Console.WriteLine($"{h} HashCode: {h.GetHashCode()}");
-            //Console.WriteLine($"{h} ToString(): {h.ToString()}");
-            //Console.WriteLine(h);
+                ///*Hunter h = new Hunter("Hossain", "Ghazal", "Leica") { Age = 22 };*/
+                //Console.WriteLine(h.Age);
+                //Console.WriteLine(h.Shoot());
+                //Hunter h = new Hunter("Hossain", "Ghazal", "Leica") { Age = 22 };
+                //Hunter h2 = new Hunter("Hossain", "Ghazal", "Leica") { Age = 22 };
 
-            //var rectangle1 = new Rectangle { Width = 10, Height = 10 };
-            //var rectangle2 = new Rectangle { Width = 15, Height = 10 };
+                //Console.WriteLine($"{h} Equals {h2}? {h.Equals(h2)}");
+                //Console.WriteLine($"{h} HashCode: {h.GetHashCode()}");
+                //Console.WriteLine($"{h} ToString(): {h.ToString()}");
+                //Console.WriteLine(h);
 
-            //var shapeList = new List<Shape> { rectangle1, rectangle2 };
-            //var totalArea = 0;
+                //var rectangle1 = new Rectangle { Width = 10, Height = 10 };
+                //var rectangle2 = new Rectangle { Width = 15, Height = 10 };
 
-            //shapeList.ForEach(x => totalArea += x.CalculateArea());
-            //Console.WriteLine(totalArea);
+                //var shapeList = new List<Shape> { rectangle1, rectangle2 };
+                //var totalArea = 0;
 
-            //Airplane a = new Airplane(200, 100, "JetsRUs") { NumPassengers = 150 };
-            //a.Ascend(500);
-            //Console.WriteLine(a.Move(3));
-            //Console.WriteLine(a);
-            //a.Descend(200);
-            //Console.WriteLine(a.Move());
-            //a.Move();
-            //Console.WriteLine(a);
+                //shapeList.ForEach(x => totalArea += x.CalculateArea());
+                //Console.WriteLine(totalArea);
 
-            //var gameObjects = new List<Object>()
-            //{ 
-            //    new Person ("Nish", "Mandal"),
-            //    new Airplane (400, 200, "Virgin"),
-            //    new Vehicle (12, 20),
-            //    new Hunter ("Tim", "Burton", "Nikon")
-            //};
+                //Airplane a = new Airplane(200, 100, "JetsRUs") { NumPassengers = 150 };
+                //a.Ascend(500);
+                //Console.WriteLine(a.Move(3));
+                //Console.WriteLine(a);
+                //a.Descend(200);
+                //Console.WriteLine(a.Move());
+                //a.Move();
+                //Console.WriteLine(a);
 
-            //gameObjects.ForEach(x => Console.WriteLine(x));
+                //var gameObjects = new List<Object>()
+                //{ 
+                //    new Person ("Nish", "Mandal"),
+                //    new Airplane (400, 200, "Virgin"),
+                //    new Vehicle (12, 20),
+                //    new Hunter ("Tim", "Burton", "Nikon")
+                //};
 
-            //var liam = new Person("Liam", "Gallagher");
-            //SpartaWrite(liam);
+                //gameObjects.ForEach(x => Console.WriteLine(x));
 
-            //var billoddie = new Hunter("Bill", "Oddie", "Nokia");
-            //SpartaWrite(billoddie);
-            //SpartaWrite((Person)billoddie);
+                //var liam = new Person("Liam", "Gallagher");
+                //SpartaWrite(liam);
 
-            //// IMoveable Implementation
-            //var movableObjects = new List<IMoveable>()
-            //{
-            //    new Person("John", "Smith")
-            //    , new Hunter("Bill", "Oddie", "Nikon")
-            //    , new Airplane (400, 200, "Virgin")
-            //    , new Vehicle (12, 20),
-            //};
-            //movableObjects.ForEach(x => Console.WriteLine(x.Move()));
+                //var billoddie = new Hunter("Bill", "Oddie", "Nokia");
+                //SpartaWrite(billoddie);
+                //SpartaWrite((Person)billoddie);
 
-            //// <Weapon>/<IShootable> demonstration
+                //// IMoveable Implementation
+                //var movableObjects = new List<IMoveable>()
+                //{
+                //    new Person("John", "Smith")
+                //    , new Hunter("Bill", "Oddie", "Nikon")
+                //    , new Airplane (400, 200, "Virgin")
+                //    , new Vehicle (12, 20),
+                //};
+                //movableObjects.ForEach(x => Console.WriteLine(x.Move()));
 
-            var weaponList = new List<IShootable>()
-            {
-                  new WaterPistol("Nerf Super Soaker Zipfire")
-                 , new LaserGun("General Atomics AER9")
-                 , new Hunter("John", "Wayne", new Camera("Nikon") )
-                 , new Hunter("Richard", "Deckard", new Camera("Pentax") )
-                 , new Camera("Fujifilm")
-        };
-            weaponList.ForEach(x => Console.WriteLine(x.Shoot()));
+                //// <Weapon>/<IShootable> demonstration
 
-        }
-
-        static void SpartaWrite(Object obj)
-        {
-            Console.WriteLine(obj);
-            if (obj is Hunter)
-            {
-                var hunterObj = (Hunter)obj;
-                Console.WriteLine(hunterObj.Shoot());
+                //var weaponList = new List<IShootable>()
+                //{
+                //      new WaterPistol("Nerf Super Soaker Zipfire")
+                //     , new LaserGun("General Atomics AER9")
+                //     , new Hunter("John", "Wayne", new Camera("Nikon") )
+                //     , new Hunter("Richard", "Deckard", new Camera("Pentax") )
+                //     , new Camera("Fujifilm")
+                //};
+                //weaponList.ForEach(x => Console.WriteLine(x.Shoot()));
             }
+
+            var gazelle = new Gazelle(10);
+            Console.WriteLine(gazelle.Move());
+            Console.WriteLine($"Position {gazelle.Position}");
+            Console.WriteLine(gazelle.Move(10));
+            Console.WriteLine($"Position {gazelle.Position}");
+
+            Console.WriteLine(gazelle);
+            Console.WriteLine(gazelle.FightOrFlight(1));
+
         }
+
+        //static void SpartaWrite(Object obj)
+        //{
+        //    Console.WriteLine(obj);
+        //    if (obj is Hunter)
+        //    {
+        //        var hunterObj = (Hunter)obj;
+        //        Console.WriteLine(hunterObj.Shoot());
+        //    }
+        //}
 
         //static void DemoMethod(Point3d pt, Person p)
         //{

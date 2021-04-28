@@ -17,7 +17,7 @@ namespace SafariPark
 
         public string Shoot()
         {
-            return $"taken a photo with their {_brand}.";
+            return $"photo taken with {_brand} camera.";
         }
     }
 }
