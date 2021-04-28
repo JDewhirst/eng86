@@ -8,45 +8,50 @@ namespace SafariPark
 {
     public class Airplane : Vehicle
     {
-        private string _airline;
-        private int _altitude;
+        public string Airline { get; private set; }
+        public int Altitude { get; private set; }
 
-        public Airplane(int capacity) : base()
+        public Airplane(int capacity) : base(capacity)
         {
-            _capacity = capacity;
         }
 
-        public Airplane( int capacity, int speed, string airline) : base()
+        public Airplane( int capacity, int speed, string airline) : base(capacity, speed)
         {
-            _airline = airline;
-            _capacity = capacity;
-            _speed = speed;
+            Airline = airline;
         }
 
         public void Ascend(int distance)
         {
-            _altitude += distance;
+            Altitude += distance;
         }
 
         public void Descend(int distance)
         {
-            _altitude -= distance;
+            if (Altitude - distance < 0)
+            {
+                throw new ArgumentException("The plane crashes!");
+            }
+            else
+            {
+                Altitude -= distance;
+            }
         }
 
         public override string Move()
         {
-            Position += _speed;
-            return $"{base.Move()} at an altitude of {_altitude} metres.";
+            Position += Speed;
+            return $"{base.Move()} at an altitude of {Altitude} metres.";
         }
 
         public override string Move(int times)
         {
-            return $"{base.Move(times)} at an altitude of {_altitude} metres.";
+            Position += times * Speed;
+            return $"{base.Move(times)} at an altitude of {Altitude} metres.";
         }
 
         public override string ToString()
         {
-            return $"Thank you for flying {_airline}: {base.ToString()} capacity: {_capacity} passengers: {NumPassengers} speed: {_speed} position: {Position} altitude: {_altitude}.";
+            return $"Thank you for flying {Airline}: {base.ToString()} altitude: {Altitude}.";
         }
     }
 }

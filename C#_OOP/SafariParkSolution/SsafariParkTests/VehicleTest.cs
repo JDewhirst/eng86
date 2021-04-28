@@ -5,6 +5,8 @@ namespace SafariParkTests
 {
     class VehicleTest
     {
+
+
         [Test]
         public void WhenADefaultVehicleMovesTwiceItsPositionIs20()
         {

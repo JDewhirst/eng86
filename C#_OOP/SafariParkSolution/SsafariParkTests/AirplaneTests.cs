@@ -7,13 +7,20 @@ namespace SafariParkTests
     class AirplaneTests
     {
 
+        //[SetUp]
+        //public void RunBeforeAnyTests()
+        //{
+
+        //}
+
         [Test]
-        public void WhenAnAirplaneDescendsBelow0ItThrowsCrashException()
+        public void WhenAnAirplaneDescendsBelow0ItThrowsArgumentException()
         {
-            Assert.Fail();
+            Airplane a = new Airplane(100, 20, "SaharaAir") ;
+            var ex = Assert.Throws<ArgumentException>(() => a.Descend(100));
         }
 
-        [TestCase()]
+        [Test]
         public void AirplaneNoArgumentsMoveTest()
         {
             Airplane a = new Airplane(100, 20, "SaharaAir");
@@ -32,7 +39,7 @@ namespace SafariParkTests
         [Test]
         public void AirplaneToStringTest()
         {
-            Airplane a = new Airplane(100, 20, "SaharaAir") { NumPassengers = 50,};
+            Airplane a = new Airplane(100, 20, "SaharaAir") { NumPassengers = 50};
             Assert.AreEqual("Thank you for flying SaharaAir: SafariPark.Airplane capacity: 100 passengers: 50 speed: 20 position: 0 altitude: 0."
                             , a.ToString()
                             );
