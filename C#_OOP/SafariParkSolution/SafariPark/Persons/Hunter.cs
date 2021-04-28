@@ -8,7 +8,6 @@ namespace SafariPark
 {
     public class Hunter : Person
     {
-        // private string _camera;
         public IShootable Shooter {get; set; }
 
         public Hunter() { }

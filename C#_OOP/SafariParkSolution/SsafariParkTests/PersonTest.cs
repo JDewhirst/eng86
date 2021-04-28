@@ -15,11 +15,12 @@ namespace SafariParkTests
             Assert.AreEqual(expected, actual);
         }
 
-        [Test]
-        public void AgeTest()
+        [TestCase(30,30)]
+        [TestCase(-10,0)]
+        public void AgeTest(int input, int expected)
         {
-            var subject = new Person("A", "B") { Age = 30 };
-            Assert.AreEqual(30, subject.Age);
+            var subject = new Person("A", "B") { Age = input };
+            Assert.AreEqual(expected, subject.Age);
         }
     }
 }

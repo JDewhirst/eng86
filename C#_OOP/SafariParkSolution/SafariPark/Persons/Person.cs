@@ -13,11 +13,7 @@ namespace SafariPark
 
         private int _age;
 
-        public int Age
-        {
-            get { return _age; }
-            set { if (value >= 0) { _age = value; } }
-        }
+        public int Age { get => _age; set => _age = value >= 0 ? value : 0; }
 
         public Person() { }
         public Person(string fName, string lName )
