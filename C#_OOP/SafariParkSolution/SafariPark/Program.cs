@@ -130,7 +130,12 @@ namespace SafariPark
                  , new Camera("Fujifilm")
             };
 
-            Hunter player = new Hunter("John", "Smith", weaponList[0]);
+            Console.WriteLine("What is your first name ?");
+            string fName = Console.ReadLine();
+            Console.WriteLine("What is your last name ?");
+            string lName = Console.ReadLine();
+
+            Hunter player = new Hunter(fName, lName, weaponList[0]);
 
             bool gameOn = true;
 
@@ -153,7 +158,9 @@ namespace SafariPark
                         Console.WriteLine(player.Shoot());
                         break;
                     case "3":
-                        Console.WriteLine("Not implemented");
+                        weaponList.ForEach(x => Console.WriteLine( x.ToString() ) ) ;
+                        int weapon = int.Parse(Console.ReadLine());
+                        player.Shooter = weaponList[weapon];
                         break;
                     case "4":
                         Console.WriteLine("Are you sure ? (Y/N)");
