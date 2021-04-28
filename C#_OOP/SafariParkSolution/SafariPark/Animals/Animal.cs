@@ -21,9 +21,17 @@ namespace SafariPark
             Startle = startle;
             _name = name;
         }
-        public abstract string Move();
+        public virtual string Move()
+        {
+            Position += Speed;
+            return $"{_name} is moving along.";
+        }
 
-        public abstract string Move(int times);
+        public virtual string Move(int times)
+        {
+            Position += Speed * times;
+            return $"{_name} is moving along {times} times.";
+        }
 
         public virtual string FightOrFlight(int volume)
         {

@@ -19,10 +19,9 @@
   <Class Name="SafariPark.Hunter">
     <Position X="1.75" Y="8" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAAEAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Persons\Hunter.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="System.Object">
     <Position X="4.25" Y="0.5" Width="3.25" />
@@ -38,8 +37,8 @@
   <Class Name="SafariPark.Weapon">
     <Position X="13.25" Y="3.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAAFAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Weapon.cs</FileName>
+      <HashCode>AAAAAAAAAAAABAAFAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Items\Weapon.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -47,15 +46,44 @@
     <Position X="15.25" Y="6.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Weapon.cs</FileName>
+      <FileName>Items\Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SafariPark.WaterPistol">
     <Position X="12.75" Y="6.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Weapon.cs</FileName>
+      <FileName>Items\Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="SafariPark.Camera">
+    <Position X="18.5" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAABAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Items\Camera.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="SafariPark.IMoveable">
+    <Position X="10.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IMoveable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SafariPark.IShootable">
+    <Position X="12.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IShootable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SafariPark.IStartleable">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Interfaces\IStartleable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9.16" />
 </ClassDiagram>

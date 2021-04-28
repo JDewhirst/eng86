@@ -108,14 +108,6 @@ namespace SafariPark
                 //weaponList.ForEach(x => Console.WriteLine(x.Shoot()));
             }
 
-            //var gazelle = new Gazelle(10);
-            //Console.WriteLine(gazelle.Move());
-            //Console.WriteLine($"Position {gazelle.Position}");
-            //Console.WriteLine(gazelle.Move(10));
-            //Console.WriteLine($"Position {gazelle.Position}");
-
-            //Console.WriteLine(gazelle);
-            //Console.WriteLine(gazelle.FightOrFlight(1));
 
             //When you shoot the distance between yourself and the creature along with the volume of the item decide whether it startles or not.
             //If it's startled check if it's charging or bolting
@@ -131,7 +123,14 @@ namespace SafariPark
             };
 
             // animal list
-            // todo
+            var animalList = new List<Animal>
+            {
+                new Gazelle(60)
+                , new Bufallo(60)
+            };
+
+            Random rnd = new Random();
+            int randAnimal = rnd.Next(0, 1);
 
             Console.WriteLine("What is your first name ?");
             string fName = Console.ReadLine();
@@ -139,7 +138,7 @@ namespace SafariPark
             string lName = Console.ReadLine();
 
             Hunter player = new Hunter(fName, lName, weaponList[0]);
-            Gazelle gazelle = new Gazelle(60);
+
 
             bool gameOn = true;
 
@@ -151,11 +150,12 @@ namespace SafariPark
                 switch (command)
                 {
                     case "1":
-                        Console.WriteLine(player.Move());
+                        //Console.WriteLine(player.Move());
+                        Console.WriteLine("Not yet implemented");
                         break;
                     case "2":
                         Console.WriteLine(player.Shoot());
-                        Console.WriteLine(gazelle.FightOrFlight(player.Shooter.Volume));
+                        Console.WriteLine(animalList[randAnimal].FightOrFlight(player.Shooter.Volume));
                         break;
                     case "3":
                         weaponList.ForEach(x => Console.WriteLine( x.ToString() ) ) ;
@@ -173,9 +173,9 @@ namespace SafariPark
                 }
 
                 // if gazelle is further than 100 away it has a chance to flee
-                if (gazelle.Position > 100)
+                if (animalList[randAnimal].Position > 100)
                 {
-                    Console.WriteLine("Gazelle has escaped!");
+                    Console.WriteLine($"{animalList[randAnimal].ToString()} has escaped!");
                     Console.WriteLine("Game over");
                     gameOn = false;
                 }
