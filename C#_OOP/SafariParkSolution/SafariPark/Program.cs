@@ -125,10 +125,13 @@ namespace SafariPark
             // Weapons
             var weaponList = new List<IShootable>()
             {
-                  new WaterPistol("Nerf Super Soaker Zipfire", 4)
-                 , new LaserGun("General Atomics AER9", 10)
-                 , new Camera("Fujifilm")
+                  new WaterPistol("Nerf Super Soaker Zipfire", 10)
+                 , new LaserGun("General Atomics AER9", 6)
+                 , new Camera("Fujifilm", 1)
             };
+
+            // animal list
+            // todo
 
             Console.WriteLine("What is your first name ?");
             string fName = Console.ReadLine();
@@ -167,6 +170,14 @@ namespace SafariPark
                     default:
                         Console.WriteLine("Not a valid command");
                         break;
+                }
+
+                // if gazelle is further than 100 away it has a chance to flee
+                if (gazelle.Position > 100)
+                {
+                    Console.WriteLine("Gazelle has escaped!");
+                    Console.WriteLine("Game over");
+                    gameOn = false;
                 }
             }
 

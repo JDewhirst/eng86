@@ -27,13 +27,14 @@ namespace SafariPark
 
         public virtual string FightOrFlight(int volume)
         {
-            if (rnd.Next(1,20) < Startle)
+            if (rnd.Next(1,20) < Startle + volume)
             {
                 Isstartled = true;
                 if (rnd.Next(1,20) < Aggression)
                 {
                     return $"{_name} is charging!";
                 }
+                Console.WriteLine(this.Move());
                 return $"{_name} bolts!";
             }
             else

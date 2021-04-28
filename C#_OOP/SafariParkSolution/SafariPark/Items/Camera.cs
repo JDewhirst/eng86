@@ -11,9 +11,10 @@ namespace SafariPark
         private string _brand;
         public int Volume { get; set; }
 
-        public Camera(string brand)
+        public Camera(string brand, int volume = 2)
         {
             _brand = brand;
+            Volume = volume;
         }
 
         public string Shoot()
