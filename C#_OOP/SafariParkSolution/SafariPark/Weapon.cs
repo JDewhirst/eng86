@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SafariPark
 {
-    public abstract class Weapon
+    public abstract class Weapon : IShootable
     {
         public string _brand;
 

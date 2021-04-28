@@ -58,17 +58,52 @@ namespace SafariPark
             //shapeList.ForEach(x => totalArea += x.CalculateArea());
             //Console.WriteLine(totalArea);
 
-            Airplane a = new Airplane(200, 100, "JetsRUs") { NumPassengers = 150 };
-            a.Ascend(500);
-            Console.WriteLine(a.Move(3));
-            Console.WriteLine(a);
-            a.Descend(200);
-            Console.WriteLine(a.Move());
-            a.Move();
-            Console.WriteLine(a);
+            //Airplane a = new Airplane(200, 100, "JetsRUs") { NumPassengers = 150 };
+            //a.Ascend(500);
+            //Console.WriteLine(a.Move(3));
+            //Console.WriteLine(a);
+            //a.Descend(200);
+            //Console.WriteLine(a.Move());
+            //a.Move();
+            //Console.WriteLine(a);
 
+            //var gameObjects = new List<Object>()
+            //{ 
+            //    new Person ("Nish", "Mandal"),
+            //    new Airplane (400, 200, "Virgin"),
+            //    new Vehicle (12, 20),
+            //    new Hunter ("Tim", "Burton", "Nikon")
+            //};
 
+            //gameObjects.ForEach(x => Console.WriteLine(x));
 
+            //var liam = new Person("Liam", "Gallagher");
+            //SpartaWrite(liam);
+
+            //var billoddie = new Hunter("Bill", "Oddie", "Nokia");
+            //SpartaWrite(billoddie);
+            //SpartaWrite((Person)billoddie);
+
+            //// IMoveable Implementation
+            //var movableObjects = new List<IMoveable>()
+            //{
+            //    new Person("John", "Smith")
+            //    , new Hunter("Bill", "Oddie", "Nikon")
+            //    , new Airplane (400, 200, "Virgin")
+            //    , new Vehicle (12, 20),
+            //};
+            //movableObjects.ForEach(x => Console.WriteLine(x.Move()));
+
+        }
+
+        static void SpartaWrite(Object obj)
+        {
+            Console.WriteLine(obj);
+            if (obj is Hunter)
+            {
+                var hunterObj = (Hunter)obj;
+                Console.WriteLine(hunterObj.Shoot());
+            }
         }
 
         //static void DemoMethod(Point3d pt, Person p)
@@ -76,5 +111,6 @@ namespace SafariPark
         //    pt.y = 1000;
         //    p.Age = 92;
         //}
+
     }
 }

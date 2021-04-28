@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SafariPark
 {
-    public class Hunter : Person
+    public class Hunter : Person, IShootable
     {
         private string _camera;
 

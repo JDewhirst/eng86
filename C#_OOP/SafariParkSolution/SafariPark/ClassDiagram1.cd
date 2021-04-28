@@ -3,30 +3,33 @@
   <Class Name="SafariPark.Person">
     <Position X="0.75" Y="3.75" Width="4.75" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAEAEEAAAAAAAAAAAgIAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAIAAAAAEAEEAAAAAAAAAAAgIAAAAAAAAAAA=</HashCode>
       <FileName>Persons\Person.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SafariPark.Vehicle">
-    <Position X="7.25" Y="3.75" Width="4.5" />
+    <Position X="6.25" Y="3.75" Width="4.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAoAAAAAkEAAAAAQBAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Vehicles\Vehicle.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SafariPark.Hunter">
-    <Position X="1.75" Y="7.5" Width="2.5" />
+    <Position X="1.75" Y="8" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
       <FileName>Persons\Hunter.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="System.Object">
     <Position X="4.25" Y="0.5" Width="3.25" />
     <TypeIdentifier />
   </Class>
   <Class Name="SafariPark.Airplane">
-    <Position X="7.5" Y="7.75" Width="3.5" />
+    <Position X="6.75" Y="7.75" Width="3.5" />
     <TypeIdentifier>
       <HashCode>QAAAAIAAAIAAAAAEAAAAgAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Vehicles\Airplane.cs</FileName>
@@ -35,19 +38,20 @@
   <Class Name="SafariPark.Weapon">
     <Position X="13.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAAFAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapon.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SafariPark.LaserGun">
-    <Position X="15.25" Y="6.25" Width="1.5" />
+    <Position X="15.25" Y="6.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SafariPark.WaterPistol">
-    <Position X="12.75" Y="6.25" Width="1.5" />
+    <Position X="12.75" Y="6.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapon.cs</FileName>

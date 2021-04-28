@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SafariPark
 {
-    public class Person
+    public class Person : IMoveable
     {
         private string _firstName;
         private string _lastName;
@@ -42,5 +42,17 @@ namespace SafariPark
         {
             return $"{base.ToString()} Name: {GetFullName()} Age: {Age}";
         }
+
+        public virtual string Move()
+        {
+            return $"Walking along";
+        }
+
+        public virtual string Move(int times)
+        {
+            return $"Walking along {times} times";
+        }
+
+
     }
 }
