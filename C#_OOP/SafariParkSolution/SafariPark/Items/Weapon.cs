@@ -17,7 +17,7 @@ namespace SafariPark
 
         public virtual string Shoot() 
         {
-            return $"Shot by a {_brand} weapon.";
+            return $"{_brand}";
         }
 
         public override string ToString()
@@ -31,7 +31,7 @@ namespace SafariPark
     {
         public override string Shoot()
         {
-            return $"Zing!! {base.Shoot()}";
+            return $"Zing!! with {base.Shoot()}";
         }
 
         public LaserGun(string brand) : base(brand) { }
@@ -41,7 +41,7 @@ namespace SafariPark
     {
         public override string Shoot()
         {
-            return $"Splash!! {base.Shoot()}";
+            return $"Splash!! with {base.Shoot()}";
         }
 
         public WaterPistol(string brand) : base(brand) { }

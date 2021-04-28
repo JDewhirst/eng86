@@ -8,16 +8,17 @@ namespace SafariPark
 
         private string _name = "Animal";
         public int Position { get; protected set; }
-        public int Speed { get; private set; } = 18;
+        public int Speed { get; private set; } = 10;
         public int Startle { get; private set; } = 10;
         public int Aggression { get; private set; } = 2;
         public bool Isstartled { get; protected set; } = false;
         public Animal() { }
 
-        public Animal(int position, int speed, string name = "Animal")
+        public Animal(int position, int speed, int startle = 10, string name = "Animal")
         {
             Speed = speed;
             Position = position;
+            Startle = startle;
             _name = name;
         }
         public abstract string Move();

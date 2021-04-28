@@ -6,7 +6,7 @@ namespace SafariPark
     {
         public Gazelle() { }
 
-        public Gazelle(int position, int speed = 10, string name = "Gazelle") : base(position, speed, name) {}
+        public Gazelle(int position, int speed = 18, int startle = 18, string name = "Gazelle") : base(position, speed, startle, name) {}
 
         public override string Move()
         {

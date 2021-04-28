@@ -108,14 +108,63 @@ namespace SafariPark
                 //weaponList.ForEach(x => Console.WriteLine(x.Shoot()));
             }
 
-            var gazelle = new Gazelle(10);
-            Console.WriteLine(gazelle.Move());
-            Console.WriteLine($"Position {gazelle.Position}");
-            Console.WriteLine(gazelle.Move(10));
-            Console.WriteLine($"Position {gazelle.Position}");
+            //var gazelle = new Gazelle(10);
+            //Console.WriteLine(gazelle.Move());
+            //Console.WriteLine($"Position {gazelle.Position}");
+            //Console.WriteLine(gazelle.Move(10));
+            //Console.WriteLine($"Position {gazelle.Position}");
 
-            Console.WriteLine(gazelle);
-            Console.WriteLine(gazelle.FightOrFlight(1));
+            //Console.WriteLine(gazelle);
+            //Console.WriteLine(gazelle.FightOrFlight(1));
+
+            //When you shoot the distance between yourself and the creature along with the volume of the item decide whether it startles or not.
+            //If it's startled check if it's charging or bolting
+            //If it's chargin it moves towards you, if it's bolting it runs away. Once it's X distance from you it has a chance to escape. 
+            // You can either move/fire/switch device. 
+
+            // Weapons
+            var weaponList = new List<IShootable>()
+            {
+                  new WaterPistol("Nerf Super Soaker Zipfire")
+                 , new LaserGun("General Atomics AER9")
+                 , new Camera("Fujifilm")
+            };
+
+            Hunter player = new Hunter("John", "Smith", weaponList[0]);
+
+            bool gameOn = true;
+
+            while (gameOn)
+            {
+                string command;
+                Console.WriteLine($"Would you like to 1. Move, 2. Shoot, 3. Change tool ? 4. Exit game");
+                command = Console.ReadLine();
+                switch (command)
+                {
+                    case "1":
+                        //Console.WriteLine("Left (L) or Right (R) ?");
+                        //command = Console.ReadLine();
+                        //if (command == "L")
+                        //{
+                        Console.WriteLine(player.Move());
+                        //}
+                        break;
+                    case "2":
+                        Console.WriteLine(player.Shoot());
+                        break;
+                    case "3":
+                        Console.WriteLine("Not implemented");
+                        break;
+                    case "4":
+                        Console.WriteLine("Are you sure ? (Y/N)");
+                        string exit = Console.ReadLine();
+                        gameOn = exit == "Y" ? false : true;
+                        break;
+                    default:
+                        Console.WriteLine("Not a valid command");
+                        break;
+                }
+            }
 
         }
 
