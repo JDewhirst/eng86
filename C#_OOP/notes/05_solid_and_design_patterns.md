@@ -87,7 +87,7 @@ public Hunter(string fName, string lName, string cameraBrand) : bas(fName, lName
 
 This violates SRP and DIP. It's hard to test Hunter and Camera separately. Also the dependency is hidden, you can construct a Hunter without realising you're also constructing a Camera
 
-We instead made the method dependent on an abstraction, the IShootable interface, and passed an IShootable instance into the constructor. Now we have more flexibility. The dependency is apparent in the constructor. This is called Dependency Injection.
+We instead made the method dependent on an abstraction, the IShootable interface, and passed an IShootable instance into the constructor. Now we have more flexibility. The dependency is apparent in the constructor. This is called **Dependency Injection**.
 
 ## SOLID relationships
 
