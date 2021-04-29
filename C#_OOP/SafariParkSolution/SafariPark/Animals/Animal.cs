@@ -12,6 +12,7 @@ namespace SafariPark
         public int Startle { get; private set; } = 10;
         public int Aggression { get; private set; } = 2;
         public bool Isstartled { get; protected set; } = false;
+        public bool Ischarging { get; protected set; } = false;
         public Animal() { }
 
         public Animal(int position, int speed, int startle = 10, string name = "Animal")
@@ -35,11 +36,13 @@ namespace SafariPark
 
         public virtual string FightOrFlight(int volume)
         {
-            if (rnd.Next(1,20) < Startle + volume)
+            if (rnd.Next(1,20) < Startle + volume || Isstartled == false)
             {
+
                 Isstartled = true;
-                if (rnd.Next(1,20) < Aggression)
+                if (Ischarging == true || rnd.Next(1, 20) < Aggression)
                 {
+                    Ischarging = true;
                     return $"{_name} is charging!";
                 }
                 Console.WriteLine(this.Move());
