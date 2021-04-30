@@ -19,37 +19,39 @@ namespace RadioGui
 {
     public partial class MainWindow : Window
     {
-        Radio radio = new();
+        private Radio _radio = new();
 
         public MainWindow()
         {
+            _radio.LoadChannel();
             InitializeComponent();
         }
 
         private void UpdateLabel()
         {
-            LabelOutput.Content = radio.Play();
+            LabelOutput.Content = _radio.Play();
             if (ButtonPower.Content.ToString() == "On")
             {
-                RadioPlayer.Source = radio.ChannelURI;
+                RadioPlayer.Source = _radio.ChannelURI;
                 RadioPlayer.Play();
+                _radio.SaveChannel();
             }
             else
             {
                 RadioPlayer.Pause();
-            }
+            } 
         }
 
         private void ButtonPower_Click(object sender, RoutedEventArgs e)
         {
             if ((sender as Button).Content.ToString() == "Off")
             {
-                radio.TurnOn();
+                _radio.TurnOn();
                 ButtonPower.Content = "On";
             }
             else
             {
-                radio.TurnOff();
+                _radio.TurnOff();
                 ButtonPower.Content = "Off";
             }
             UpdateLabel();
@@ -57,8 +59,7 @@ namespace RadioGui
 
         private void ButtonChannel_Click(object sender, RoutedEventArgs e)
         {
-            // take the content from the button, try to change the channel. Return the string to the output label.
-            radio.Channel = int.Parse((sender as Button).Content.ToString());
+            _radio.Channel = int.Parse((sender as Button).Content.ToString());
             UpdateLabel();
         }
 

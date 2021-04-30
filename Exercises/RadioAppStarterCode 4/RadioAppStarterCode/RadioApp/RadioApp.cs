@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 
 namespace RadioApp
 {
@@ -28,6 +28,31 @@ namespace RadioApp
 
         public void TurnOff() => _on = false;
         public void TurnOn() => _on = true;
+
+        public void SaveChannel()
+        {
+            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"RadioApp");
+            string filePath = Path.Combine(folderPath, "WriteFile.txt");
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+            using (StreamWriter outputFile = new StreamWriter(filePath))
+            {
+                outputFile.WriteLine(_channel);
+            }
+        }
+
+        public void LoadChannel()
+        {
+            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"RadioApp");
+            string filePath = Path.Combine(folderPath, "WriteFile.txt");
+            if (Directory.Exists(folderPath))
+            {
+                using (StreamReader inputFile = new StreamReader(filePath))
+                {
+                    _channel = int.Parse(inputFile.ReadLine());
+                }
+            }
+        }
     }
 
 }
