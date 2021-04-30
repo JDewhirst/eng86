@@ -7,6 +7,8 @@ namespace RadioApp
     {
         private int _channel = 1;
         private bool _on = false;
+        private static string _folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RadioApp");
+        private static string _channelFilePath = Path.Combine(_folderPath, "WriteFile.txt");
 
         private Uri[] _channelURIArray = new Uri[4]
         {
@@ -31,11 +33,9 @@ namespace RadioApp
 
         public void SaveChannel()
         {
-            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"RadioApp");
-            string filePath = Path.Combine(folderPath, "WriteFile.txt");
-            if (!Directory.Exists(folderPath))
-                Directory.CreateDirectory(folderPath);
-            using (StreamWriter outputFile = new StreamWriter(filePath))
+            if (!Directory.Exists(_folderPath))
+                Directory.CreateDirectory(_folderPath);
+            using (StreamWriter outputFile = new StreamWriter(_channelFilePath))
             {
                 outputFile.WriteLine(_channel);
             }
@@ -43,11 +43,10 @@ namespace RadioApp
 
         public void LoadChannel()
         {
-            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"RadioApp");
-            string filePath = Path.Combine(folderPath, "WriteFile.txt");
-            if (Directory.Exists(folderPath))
+
+            if (Directory.Exists(_folderPath))
             {
-                using (StreamReader inputFile = new StreamReader(filePath))
+                using (StreamReader inputFile = new StreamReader(_channelFilePath))
                 {
                     _channel = int.Parse(inputFile.ReadLine());
                 }
