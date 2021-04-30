@@ -17,9 +17,6 @@ using RadioApp;
 
 namespace RadioGui
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         Radio radio = new();
@@ -32,6 +29,15 @@ namespace RadioGui
         private void UpdateLabel()
         {
             LabelOutput.Content = radio.Play();
+            if (ButtonPower.Content.ToString() == "On")
+            {
+                RadioPlayer.Source = radio.ChannelURI;
+                RadioPlayer.Play();
+            }
+            else
+            {
+                RadioPlayer.Pause();
+            }
         }
 
         private void ButtonPower_Click(object sender, RoutedEventArgs e)
@@ -40,13 +46,11 @@ namespace RadioGui
             {
                 radio.TurnOn();
                 ButtonPower.Content = "On";
-                RadioPlayer.Source = radio.ChannelURI;
             }
             else
             {
                 radio.TurnOff();
                 ButtonPower.Content = "Off";
-                RadioPlayer.Source = new Uri(" ");
             }
             UpdateLabel();
         }
@@ -55,8 +59,19 @@ namespace RadioGui
         {
             // take the content from the button, try to change the channel. Return the string to the output label.
             radio.Channel = int.Parse((sender as Button).Content.ToString());
-            RadioPlayer.Source = radio.ChannelURI;
             UpdateLabel();
+        }
+
+        private void ButtonVolume(object sender, RoutedEventArgs e)
+        {
+            if ((sender as Button).Content.ToString() == "+")
+            {
+                RadioPlayer.Volume += 0.05;
+            }
+            else
+            {
+                RadioPlayer.Volume -= 0.05;
+            }
         }
     }
 }

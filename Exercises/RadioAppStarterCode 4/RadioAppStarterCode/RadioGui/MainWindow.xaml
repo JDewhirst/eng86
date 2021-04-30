@@ -10,6 +10,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -27,9 +29,10 @@
         <Button x:Name="ButtonChannelThree" Grid.Column="0" Grid.Row="3" Content="3" FontSize="48" Click="ButtonChannel_Click"></Button>
         <Button x:Name="ButtonChannelFour" Grid.Column="1" Grid.Row="3" Content="4" FontSize="48" Click="ButtonChannel_Click"></Button>
 
-        <MediaElement x:Name="RadioPlayer" Grid.Column="1" HorizontalAlignment="Left" Source="" Height="100" Margin="144,0,0,0" VerticalAlignment="Top" Width="100"/>
+        <MediaElement x:Name="RadioPlayer" LoadedBehavior="Manual" Grid.Column="1" HorizontalAlignment="Left" Source="" Height="100" Margin="255,0,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1" RenderTransformOrigin="-0.744,0.48"/>
 
-
+        <Button x:Name="ButtonVolumeUp" Grid.Column="1" Grid.Row="0" Content="+" FontSize="48" Click="ButtonVolume"></Button>
+        <Button x:Name="ButtonVolumeDown" Grid.Column="2" Grid.Row="0" Content="-" FontSize="48" Click="ButtonVolume"></Button>
     </Grid>
 
 
