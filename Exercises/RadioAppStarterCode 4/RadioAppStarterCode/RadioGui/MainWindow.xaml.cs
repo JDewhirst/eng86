@@ -22,7 +22,8 @@ namespace RadioGui
     /// </summary>
     public partial class MainWindow : Window
     {
-        Radio radio = new Radio();
+        Radio radio = new();
+        MediaElement mediaElement = new();
 
         public MainWindow()
         {
