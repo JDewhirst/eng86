@@ -20,9 +20,9 @@ The class members should be cohesive. The fields and properties should hold info
 
 ### Example: Our Hunter Class
 
-Our first imp of Hunter included a _camera field to represent a camera and a Shoot() method that returns a message about the camera. If we wanted to add more functionality to the camera (focus, set exposure, etc) we would have to change the *Hunter*, but why is the Hunter in charge of the camera anyway ? So move the camera functionality to a separate class.
+Our first implementation of Hunter included a _camera field to represent a camera and a Shoot() method that returns a message about the camera. If we wanted to add more functionality to the camera (focus, set exposure, etc) we would have to change the *Hunter*, but why is the Hunter in charge of the camera anyway ? So move the camera functionality to a separate class.
 
-Because everything is only responsible for itself it's then easier to reuse in other contexts.
+Because everything is only responsible for itself it's then easier to reuse in other contexts. In the first implementation if I wanted to implement a camera on some other class, say a tourist, I would have to build that functionality again within the Tourist. If camera is its own class I do not need to do this.
 
 ## The Open–Closed Principle
 
