@@ -62,16 +62,21 @@ namespace RadioGui
             UpdateLabel();
         }
 
-        private void ButtonVolume(object sender, RoutedEventArgs e)
+        //private void ButtonVolume(object sender, RoutedEventArgs e)
+        //{
+        //    if ((sender as Button).Content.ToString() == "+")
+        //    {
+        //        RadioPlayer.Volume += 0.05;
+        //    }
+        //    else
+        //    {
+        //        RadioPlayer.Volume -= 0.05;
+        //    }
+        //}
+
+        private void Volume_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if ((sender as Button).Content.ToString() == "+")
-            {
-                RadioPlayer.Volume += 0.05;
-            }
-            else
-            {
-                RadioPlayer.Volume -= 0.05;
-            }
+            RadioPlayer.Volume = e.NewValue/20;
         }
     }
 }
