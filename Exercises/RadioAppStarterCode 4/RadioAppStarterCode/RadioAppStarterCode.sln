@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioApp", "RadioApp\RadioApp.csproj", "{0B6EAE98-13C7-4BD3-B99E-AD2C4880E798}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadioApp", "RadioApp\RadioApp.csproj", "{0B6EAE98-13C7-4BD3-B99E-AD2C4880E798}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioTests", "RadioTests\RadioTests.csproj", "{A7827AE3-ACFC-4AD1-8BD6-AFB33F02F59B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadioTests", "RadioTests\RadioTests.csproj", "{A7827AE3-ACFC-4AD1-8BD6-AFB33F02F59B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioGui", "RadioGui\RadioGui.csproj", "{C6570103-E4E1-4045-9F3A-F502F281D3FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A7827AE3-ACFC-4AD1-8BD6-AFB33F02F59B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7827AE3-ACFC-4AD1-8BD6-AFB33F02F59B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7827AE3-ACFC-4AD1-8BD6-AFB33F02F59B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6570103-E4E1-4045-9F3A-F502F281D3FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6570103-E4E1-4045-9F3A-F502F281D3FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6570103-E4E1-4045-9F3A-F502F281D3FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6570103-E4E1-4045-9F3A-F502F281D3FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
