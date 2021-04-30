@@ -27,7 +27,7 @@
         <Button x:Name="ButtonChannelThree" Grid.Column="0" Grid.Row="3" Content="3" FontSize="48" Click="ButtonChannel_Click"></Button>
         <Button x:Name="ButtonChannelFour" Grid.Column="1" Grid.Row="3" Content="4" FontSize="48" Click="ButtonChannel_Click"></Button>
 
-        <MediaElement Grid.Column="1" HorizontalAlignment="Left" Source="" Height="100" Margin="144,0,0,0" VerticalAlignment="Top" Width="100"/>
+        <MediaElement x:Name="RadioPlayer" Grid.Column="1" HorizontalAlignment="Left" Source="" Height="100" Margin="144,0,0,0" VerticalAlignment="Top" Width="100"/>
 
 
     </Grid>

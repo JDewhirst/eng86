@@ -8,6 +8,16 @@ namespace RadioApp
         private int _channel = 1;
         private bool _on = false;
 
+        private Uri[] _channelURIArray = new Uri[4]
+        {
+            new Uri("http://icy-e-bab-04-cr.sharp-stream.com/absoluteradio.mp3"),
+            new Uri("https://stream-al.planetradio.co.uk/kerrang.mp3"),
+            new Uri("http://46.10.150.243/jazz-fm-lounge.mp3"),
+            new Uri("http://live-bauer-mz.sharp-stream.com/viking.mp3")
+        };
+
+        public Uri ChannelURI { get => _channelURIArray[_channel - 1]; }
+
         public int Channel 
         { 
             get => _channel;

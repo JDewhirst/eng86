@@ -23,7 +23,6 @@ namespace RadioGui
     public partial class MainWindow : Window
     {
         Radio radio = new();
-        MediaElement mediaElement = new();
 
         public MainWindow()
         {
@@ -41,11 +40,13 @@ namespace RadioGui
             {
                 radio.TurnOn();
                 ButtonPower.Content = "On";
+                RadioPlayer.Source = radio.ChannelURI;
             }
             else
             {
                 radio.TurnOff();
                 ButtonPower.Content = "Off";
+                RadioPlayer.Source = new Uri(" ");
             }
             UpdateLabel();
         }
@@ -54,6 +55,7 @@ namespace RadioGui
         {
             // take the content from the button, try to change the channel. Return the string to the output label.
             radio.Channel = int.Parse((sender as Button).Content.ToString());
+            RadioPlayer.Source = radio.ChannelURI;
             UpdateLabel();
         }
     }
