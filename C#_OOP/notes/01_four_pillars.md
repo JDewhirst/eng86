@@ -40,7 +40,7 @@ Base classes should be closed to change but open to extension. Don't go wild, av
 
 ## Polymorphism
 
-"Many forms", a way for thing to flexibly interact. Same interface, different behaviour. Ibex, Fish, Eagle, Jeep all implement the Moveable interface. Can call same method on all Moveable objects, and they have different response depending on their class.
+"Many forms", a way for things to flexibly interact. Same interface, different behaviour. Ibex, Fish, Eagle, Jeep all implement the Moveable interface. Can call same method on all Moveable objects, and they have different response depending on their class.
 
 Polymorphism allows:
 

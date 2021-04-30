@@ -39,4 +39,4 @@ Non-abstract classes cannot have abstract methods.
 
 ## Sealed 
 
-Sealed method - prevents a method that ovverrides a base class virtual or abstract method from being overridden again in a derived class. Can also be applied to a whole class.
+Sealed keyword - prevents a method that overrides a base class virtual or abstract method from being overridden again in a derived class. Can also be applied to a whole class.

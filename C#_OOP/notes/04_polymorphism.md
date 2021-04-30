@@ -23,4 +23,4 @@ namespace SafariPark.Interfaces
 }
 ```
 
-You can put in a method body (since 2019) which gives a default implementation.
+You can put a method body into interface methods (since 2019) which gives a default implementation.

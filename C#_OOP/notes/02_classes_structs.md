@@ -18,7 +18,7 @@ A way of representing classes and relationships between them, can be shown at di
 
 ## Encapsulating
 
-C# uses Properties to give public or protected access to data. IN other languages like Java, you would write getter and setter methods to expose private fields
+C# uses Properties to give public or protected access to data. In other languages like Java, you would write getter and setter methods to expose private fields
 
 This `public int Age { Get; Set;}` is an auto property. 
 
@@ -38,12 +38,14 @@ _age is a private backing field._
 
 ## Properties with Functionality
 
-A property does not need to correspond directly to a backing field. We coul dimplement GetFullName() as a property rather than a method.
+A property does not need to correspond directly to a backing field. We could implement GetFullName() as a property rather than a method.
 
 ```c#
 public string (FullName)
 {
-    get {return stuff }
+    get => Fullname;
+	set => FullName = value;
+}
 ```
 
 ## `init` key word is brand new.
@@ -56,13 +58,11 @@ When an object is created with the new keyword, a special method called the cons
 
 Space is found on the heap for the new object, and a reference to it is assigned to the variable
 
-The constructor name must be exactly the same as the class
+The constructor name must be exactly the same as the class, constructors are the only methods which do not have a return type.
 
-constructors are the only methods which do not have a return type.
+If you do not write a constructor the compiler writes a default one for you, has no args and does not initialise fields, but it does create space in memory for the object and assigns a reference to it.
 
-If you do not write a constructor the compiler writes a default one for you, has no args and does not init fields, but it does create space on for the object and assigns a reference to it.
-
-If you do write a constructor with params, you don't get a default one, if you still need a no arg constructor, must provide one yourself.
+If you do write a constructor with parameters, you don't get a default constructor, if you still need a no argument constructor you must provide one yourself.
 
 ### Overloading Constructors
 
@@ -80,15 +80,15 @@ Initialise as many or as few properties as you like.
 
 ## Structs
 
-Similar to a class in that they are both data structures that encapsulate data and behaviour. They can both have member fiels, constructors, properties and methods. But you aren't allowed to define your own parameterless constructor. They can both be instantiated with keyword new, but structs can also be declared without new.
+Similar to a class in that they are both data structures that encapsulate data and behaviour. They can both have member fields, constructors, properties and methods. But you aren't allowed to define your own parameter less constructor. They can both be instantiated with keyword new, but structs can also be declared without new.
 
-Structs are val types
+Structs are value types
 
 Structs cannot inherit from another struct or class, and cannot be inherited from.
 
-Supposed to only represent a single value. Consider the DateTime struct, which is a Struct.
+Supposed to only represent a single value. Consider the DateTime struct.
 
-If you provide a constructor is must initialise all the member variables(I think)
+If you provide a constructor it must initialise all the member variables(I think)
 
 Struct instances are passed to methods by value
 

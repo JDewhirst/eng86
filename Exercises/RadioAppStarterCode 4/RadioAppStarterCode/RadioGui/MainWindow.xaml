@@ -1,0 +1,34 @@
+﻿<Window x:Class="RadioGui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RadioGui"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Button x:Name="ButtonPower" Grid.Column="0" Grid.Row="0" Content="Off" FontSize="48" Click="ButtonPower_Click"></Button>
+        
+        <Label x:Name="LabelOutput" Grid.Column="0" Grid.Row="1" Content="" FontSize="48"></Label>
+
+        <Button x:Name="ButtonChannelOne" Grid.Column="0" Grid.Row="2" Content="1" FontSize="48" Click="ButtonChannel_Click"></Button>
+        <Button x:Name="ButtonChannelTwo" Grid.Column="1" Grid.Row="2" Content="2" FontSize="48" Click="ButtonChannel_Click"></Button>
+        <Button x:Name="ButtonChannelThree" Grid.Column="0" Grid.Row="3" Content="3" FontSize="48" Click="ButtonChannel_Click"></Button>
+        <Button x:Name="ButtonChannelFour" Grid.Column="1" Grid.Row="3" Content="4" FontSize="48" Click="ButtonChannel_Click"></Button>
+
+
+    </Grid>
+
+
+</Window>
