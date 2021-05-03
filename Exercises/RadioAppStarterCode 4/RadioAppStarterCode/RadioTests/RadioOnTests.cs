@@ -52,5 +52,17 @@ namespace RadioTests
             _radio.TurnOff();
             Assert.AreEqual("Radio is off", _radio.Play());
         }
+
+        [TestCase(0.5, 0.5)]
+        [TestCase(0.1, 0.1)]
+        [TestCase(0.0, 0.0)]
+        [TestCase(1.0, 1.0)]
+        [TestCase(1.5, 1.0)]
+        [TestCase(-0.5, 0.0)]
+        public void SetVolumteTest(double input, double expected)
+        {
+            _radio.Volume = input;
+            Assert.AreEqual(expected, _radio.Volume);
+        }
     }
 }

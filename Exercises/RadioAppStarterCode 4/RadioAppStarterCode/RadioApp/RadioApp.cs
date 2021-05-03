@@ -9,7 +9,8 @@ namespace RadioApp
         private bool _on = false;
         private static string _folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RadioApp");
         private static string _channelFilePath = Path.Combine(_folderPath, "WriteFile.txt");
-        public double Volume { get; set; }
+        private double _volume;
+        public double Volume { get => _volume; set => _volume = value <= 0.0 ? 0.0 : value >= 1.0 ? 1.0 : value ; }
 
         private Uri[] _channelURIArray = new Uri[4]
         {
