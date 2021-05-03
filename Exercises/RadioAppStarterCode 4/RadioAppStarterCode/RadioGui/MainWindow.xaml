@@ -36,6 +36,9 @@
         <Slider Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="2" Width="240" Value="10"
                 Maximum="20" ValueChanged="Volume_ValueChanged" TickFrequency="1" IsSnapToTickEnabled="True"
                 />
+        
+        <Button x:Name="ButtonChannelUp" Grid.Column="2" Grid.Row="2" Content="&lt;" FontSize="48" Click="ButtonChannelArrows_Click"/>
+        <Button x:Name="ButtonChannelDown" Grid.Column="3" Grid.Row="2" Content=">" FontSize="48" Click="ButtonChannelArrows_Click"/>
     </Grid>
 
 

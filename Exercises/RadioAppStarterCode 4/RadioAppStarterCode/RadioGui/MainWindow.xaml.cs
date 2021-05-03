@@ -77,7 +77,21 @@ namespace RadioGui
 
         private void Volume_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            RadioPlayer.Volume = e.NewValue/20;
+            _radio.Volume = e.NewValue / 20;
+            RadioPlayer.Volume = e.NewValue / 20;
+        }
+
+        private void ButtonChannelArrows_Click(object sender, RoutedEventArgs e)
+        {
+            if ((sender as Button).Content.ToString() == ">")
+            {
+                _radio.Channel++;
+            } 
+            else
+            {
+                _radio.Channel--;
+            }
+            UpdateLabel();
         }
     }
 }
