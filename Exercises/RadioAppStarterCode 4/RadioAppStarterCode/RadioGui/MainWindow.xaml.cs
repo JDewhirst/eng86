@@ -23,7 +23,7 @@ namespace RadioGui
 
         public MainWindow()
         {
-            _radio.LoadChannel();
+            _radio.LoadPreviousChannel();
             InitializeComponent();
         }
 
