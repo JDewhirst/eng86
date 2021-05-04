@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFromNorthwind", "CodeFromNorthwind.csproj", "{3186AF55-668A-44AD-BC88-06B254F9FEDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFromNorthwindBusiness", "..\CodeFromNorthwindBusiness\CodeFromNorthwindBusiness.csproj", "{1E57F3EF-FBAF-4CAC-B66C-B1A56FAD6A39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3186AF55-668A-44AD-BC88-06B254F9FEDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3186AF55-668A-44AD-BC88-06B254F9FEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3186AF55-668A-44AD-BC88-06B254F9FEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3186AF55-668A-44AD-BC88-06B254F9FEDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E57F3EF-FBAF-4CAC-B66C-B1A56FAD6A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E57F3EF-FBAF-4CAC-B66C-B1A56FAD6A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E57F3EF-FBAF-4CAC-B66C-B1A56FAD6A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E57F3EF-FBAF-4CAC-B66C-B1A56FAD6A39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32BF877E-2D1E-464D-A886-6CD7E0CAF224}
+	EndGlobalSection
+EndGlobal
