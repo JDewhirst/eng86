@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ScaffoldingExercise
+namespace WalkthroughExercise
 {
     class Program
     {
