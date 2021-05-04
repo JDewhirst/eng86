@@ -66,9 +66,7 @@ namespace RadioApp
                     new Uri("http://live-bauer-mz.sharp-stream.com/viking.mp3")
                  };
                 return channelsList;
-            }
-
-            
+            } 
         }
 
         public void SaveChannel()
