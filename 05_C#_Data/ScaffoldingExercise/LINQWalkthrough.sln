@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaffoldingExercise", "ScaffoldingExercise.csproj", "{5B16E667-EEBF-4BBA-9ADE-4842E4203D41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B16E667-EEBF-4BBA-9ADE-4842E4203D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B16E667-EEBF-4BBA-9ADE-4842E4203D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B16E667-EEBF-4BBA-9ADE-4842E4203D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B16E667-EEBF-4BBA-9ADE-4842E4203D41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B60DD44A-5C68-4FA0-9365-37B05CD057D4}
+	EndGlobalSection
+EndGlobal
