@@ -123,11 +123,10 @@ using (var db = new NorthwindContext())
 
     var newCustomer = new Customer
     { 
-        CustomerId = "FRENCH"
+        CustomerId = "FRENC"
             , ContactName = "Cathy French"
             , CompanyName = "Sparta Global"
     };
-
     db.Customers.Add(newCustomer);
     db.SaveChanges();
 
