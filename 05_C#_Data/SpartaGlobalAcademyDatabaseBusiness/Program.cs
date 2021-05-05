@@ -12,17 +12,15 @@ namespace SpartaGlobalAcademyDatabaseBusiness
         {
             using (var db = new SpartaGlobalAcademyContext())
             {
-                //// CRUD 
-                //// R
-                //var traineesQuery =
-                //    from Trainee in db.Trainees
-                //    select Trainee;
-                //foreach (var item in traineesQuery)
-                //{
-                //    Console.WriteLine(item);
-                //}
-
-                // U
+                // CRUD 
+                // R
+                var traineesquery =
+                    from trainee in db.Trainees
+                    select trainee;
+                foreach (var item in traineesquery)
+                {
+                    Console.WriteLine(item);
+                }
 
             }
         }

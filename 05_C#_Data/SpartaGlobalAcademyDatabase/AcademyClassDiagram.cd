@@ -1,56 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="SpartaGlobalAcademyDatabase.Program">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="5" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpartaGlobalAcademyDatabase.SpartaGlobalAcademyContext">
-    <Position X="8.5" Y="0.5" Width="1.5" />
+    <Position X="9.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAQAQAAAAAAIAkACAEAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>SpartaGlobalAcademyContext.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpartaGlobalAcademyDatabase.Course">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AACEAAAAAAAAAAAAAAAAAACAAAAIAABAAAAAAEAAAAA=</HashCode>
       <FileName>Course.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpartaGlobalAcademyDatabase.Location">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="2.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Location.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpartaGlobalAcademyDatabase.Stream">
-    <Position X="4" Y="1.75" Width="1.5" />
+    <Position X="6" Y="3" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAABAAAAAABAAAAA=</HashCode>
       <FileName>Stream.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpartaGlobalAcademyDatabase.Trainee">
-    <Position X="6.25" Y="0.5" Width="1.5" />
+    <Position X="7" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAEAEAAACAAAAAAAIAAAAAgAAAAAAAAAAAAAAAAAAg=</HashCode>
-      <FileName>Trainee.cs</FileName>
+      <HashCode>AAAEAEAAACAAAAAEAIAAAAAgAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Class_Modifications\Trainee.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpartaGlobalAcademyDatabase.Trainer">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+    <Position X="0.5" Y="3.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAACAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Trainer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpartaGlobalAcademyDatabase.TrainerCourse">
-    <Position X="2.25" Y="2.25" Width="1.5" />
+    <Position X="3.25" Y="2" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAIAABAAAAACAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TrainerCourse.cs</FileName>
