@@ -269,19 +269,143 @@ namespace CodeFromNorthwindBusiness
 
                     //// Loading & Joining Tables
                     // Include & ThenInclude keywords
-                    var orderQueryWithCust =
-                        db.Orders.Include(o => o.Customer).Include(o => o.OrderDetails).ThenInclude(od => od.Product);
+                    //var orderQueryWithCust =
+                    //    db.Orders.Include(o => o.Customer).Include(o => o.OrderDetails).ThenInclude(od => od.Product);
 
-                    foreach (var o in orderQueryWithCust)
-                    {
-                        Console.WriteLine($"Order {o.OrderId} was made by {o.Customer.CompanyName}");
-                        foreach (var od in o.OrderDetails)
-                        {
-                            Console.WriteLine($"            Product: {od.Product.ProductName} - Quantity {od.Quantity}");
-                        }
-                    }
+                    //foreach (var o in orderQueryWithCust)
+                    //{
+                    //    Console.WriteLine($"Order {o.OrderId} was made by {o.Customer.CompanyName}");
+                    //    foreach (var od in o.OrderDetails)
+                    //    {
+                    //        Console.WriteLine($"            Product: {od.Product.ProductName} - Quantity {od.Quantity}");
+                    //    }
+                    //}
 
                 }
+
+                //// SQL Practical Exercise Part 1
+                {
+                    /// 1.1 Write a query that lists all Customers in either Paris or London. Include Customer ID, Company Name and all address fields.
+                    // Method Syntax
+                    //var londonOrParisCustQuery1 = db.Customers.Where(c => c.City == "Paris" || c.City == "London").ToList();
+                    //londonOrParisCustQuery1.ForEach(c => Console.WriteLine(c));
+
+                    // Query Syntax
+                    //var londonOrParisCustQuery2 =
+                    //    from c in db.Customers
+                    //    where c.City == "London" || c.City == "Paris"
+                    //    select c;
+                    //londonOrParisCustQuery2.ToList().ForEach(c => Console.WriteLine(c));
+
+                    /// 1.2 List all products stored in bottles
+                    //// Method Syntax
+                    //var productsInBottlesQuery = db.Products.Where(p => p.QuantityPerUnit.Contains("bottle")).ToList();
+                    //productsInBottlesQuery.ForEach(p => Console.WriteLine($"{p.ProductName} - {p.QuantityPerUnit}"));
+
+                    //// Query Syntax
+                    //var productsInBottlesQuery2 =
+                    //    from p in db.Products
+                    //    where p.QuantityPerUnit.Contains("bottle")
+                    //    select p;
+                    //productsInBottlesQuery2.ToList().ForEach(p => Console.WriteLine($"{p.ProductName} - {p.QuantityPerUnit}"));
+
+                    /// 1.3	Repeat question above, but add in the Supplier Name and Country.
+                    //// Method Syntax
+                    //var productsInBottlesQuery = db.Products.Include(p => p.Supplier).Where(p => p.QuantityPerUnit.Contains("bottle")).ToList();
+                    //productsInBottlesQuery.ForEach(p => Console.WriteLine($"{p.ProductName} - {p.Supplier.CompanyName} - {p.Supplier.Country}"));
+
+                    //// Query Syntax
+                    //var productsInBottlesQuery2 =
+                    //    from p in db.Products.Include(p => p.Supplier)
+                    //    where p.QuantityPerUnit.Contains("bottle")
+                    //    select p;
+                    //productsInBottlesQuery2.ToList().ForEach(p => Console.WriteLine($"{p.ProductName} - {p.Supplier.CompanyName} - {p.Supplier.Country}"));
+
+                    /// 1.4 Write an SQL Statement that shows how many products there are in each category. Include Category Name in result set and list the highest number first
+                    // Method Syntax
+                    //var numProductsInCategoryQuery1 =
+                    //    db.Products.Include(p => p.Category).GroupBy(p => p.Category.CategoryName).Select(newGroup => new
+                    //    {
+                    //        CategoryName = newGroup.Key,
+                    //        Count = newGroup.Count()
+                    //    });
+                    //numProductsInCategoryQuery1.ToList().ForEach(c => Console.WriteLine(c)); //not ordered by highest first
+
+                    // Query Syntax
+                    //var productsInEachCategoryQuery2 =
+                    //    from p in db.Products
+                    //    join c in db.Categories on p.CategoryId equals c.CategoryId
+                    //    group c by c.CategoryName into newGroup
+                    //    orderby newGroup.Sum(c => 1) descending
+                    //    select new
+                    //    {
+                    //        CategoryName = newGroup.Key,
+                    //        Count = newGroup.Count()
+                    //    };
+                    //productsInEachCategoryQuery2.ToList().ForEach(p => Console.WriteLine($"{p.CategoryName}: {p.Count}"));
+
+                    /// 1.5	List all UK employees using concatenation to join their title of courtesy, first name and last name together. Also include their city of residence.
+                    // Method Syntax 
+                    //var ukEmployeesQuery1 = db.Employees.ToList();
+                    //ukEmployeesQuery1.ForEach(e => Console.WriteLine($"Employee: {e.TitleOfCourtesy} {e.FirstName} {e.LastName} City: {e.City}"));
+
+                    //// Query Syntax
+                    //var ukEmployeesQuery2 =
+                    //    from e in db.Employees
+                    //    select e;
+                    //ukEmployeesQuery2.ToList().ForEach(e => Console.WriteLine($"Employee: {e.TitleOfCourtesy} {e.FirstName} {e.LastName} City: {e.City}"));
+
+                    /// 1.6	List Sales Totals for all Sales Regions (via the Territories table using 4 joins) with a Sales Total greater than 1,000,000. Use rounding or FORMAT to present the numbers. 
+                    // Method Syntax
+                    //var salesTotalsQuery1 = db.Regions.Include(t => t.Territories)
+                    //                .ThenInclude(et => et.EmployeeTerritories)
+                    //                .ThenInclude(e => e.Employee)
+                    //                .ThenInclude(o => o.Orders)
+                    //                .ThenInclude(od => od.OrderDetails)
+                    //                .Where(x => x.Sum(c => c ))
+                    //                .Select(x => new
+                    //                {
+                    //                    Region = x.Key.Trim(),
+                    //                    TotalSales = Math.Round(x.Sum(c => c.), 0)
+                    //                });
+
+                    // Query Syntax
+                    //var salesTotalsQuery2 =
+                    //    from o in db.Orders
+                    //    join od in db.OrderDetails on o.OrderId equals od.OrderId
+                    //    join et in db.EmployeeTerritories on o.EmployeeId equals et.EmployeeId
+                    //    join t in db.Territories on et.TerritoryId equals t.TerritoryId
+                    //    join r in db.Regions on t.RegionId equals r.RegionId
+                    //    group od by r.RegionDescription into newGroup
+                    //    orderby newGroup.Sum(c => (float)(c.Quantity*c.UnitPrice)*(float)(1.0 - c.Discount) ) descending
+                    //    where newGroup.Sum(c => (float)(c.Quantity * c.UnitPrice) * (float)(1.0 - c.Discount)) > 1000000
+                    //    select new
+                    //    {
+                    //        RegionName = newGroup.Key,
+                    //        SalesTotal = newGroup.Sum(c => (float)(c.Quantity * c.UnitPrice) * (float)(1.0 - c.Discount))
+                    //    };
+                    //salesTotalsQuery2.ToList().ForEach(x => Console.WriteLine($"{x.RegionName} {x.SalesTotal}"));
+
+                    /// 1.7 Count how many Orders have a Freight amount greater than 100.00 and either USA or UK as Ship Country.
+                    // Method Syntax
+                    //var numWithFrightOver100ShipCountryUkOrUsa1 = db.Orders.Where(o => o.Freight >= (decimal)100.0 && (o.ShipCountry == "UK" || o.ShipCountry == "USA")).Count();
+                    //Console.WriteLine(db.Orders.Where(o => o.Freight >= (decimal)100.0 && (o.ShipCountry == "UK" || o.ShipCountry == "USA")).Count());
+
+                    // Query Syntax
+                    //var ordersWithFrightOver100FromUkOrUSA =
+                    //    from o in db.Orders
+                    //    where o.Freight >= (decimal)100.0 && (o.ShipCountry == "UK" || o.ShipCountry == "USA")
+                    //    select o;
+                    //Console.WriteLine(ordersWithFrightOver100FromUkOrUSA.ToList().Count());
+
+                    /// 1.8	Write an SQL Statement to identify the Order Number of the Order with the highest amount of discount applied to that order.
+                    // Method Syntax
+                    //var OrderWithHighestDiscount = db.OrderDetails.S;
+                    //Console.WriteLine(OrderWithHighestDiscount.Max(x => x.Discount));
+
+                }
+                
+
             }
 
             static bool isYoung(Person P)
