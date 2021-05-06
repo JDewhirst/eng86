@@ -14,7 +14,7 @@ namespace feudalismData
         {
             if (!options.IsConfigured)
             {
-                options.UseSqlServer(@"Data Source = (localdb)\ProjectsV13; Initial Catalog = Southwind;");
+                options.UseSqlServer(@"Data Source = (localdb)\ProjectsV13; Initial Catalog = Feudalism;");
             }
         }
     }

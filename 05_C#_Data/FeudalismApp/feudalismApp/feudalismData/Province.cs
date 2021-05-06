@@ -6,8 +6,8 @@
         {
         }
 
-        public int ProvinceID { get; set; }
-        public int TerrainID { get; set; }
+        public int ProvinceId { get; set; }
+        public int TerrainId { get; set; }
         public string ProvinceName { get; set; }
         public int Population { get; set; }
 

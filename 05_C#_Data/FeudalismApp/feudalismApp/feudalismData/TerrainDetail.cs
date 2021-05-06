@@ -10,10 +10,10 @@ namespace feudalismData
         {
             Provinces = new HashSet<Province>();
         }
-
-        public int TerrainId { get; set; }
+        public int TerrainDetailId { get; set; }
         public string TerrainDescription { get; set; }
         public int TravelSpeed { get; set; }
+
 
         public virtual ICollection<Province> Provinces { get; set; }
     }
