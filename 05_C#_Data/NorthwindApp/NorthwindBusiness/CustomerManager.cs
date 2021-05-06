@@ -9,7 +9,7 @@ namespace NorthwindBusiness
     {
         public Customer SelectedCustomer { get; set; }
 
-        public void Create(string customerId, string contactName, string companyName, string city = null)
+        public void CreateCustomer(string customerId, string contactName, string companyName, string city = null)
         {
             var newCust = new Customer() { CustomerId = customerId, ContactName = contactName, CompanyName = companyName };
             using (var db = new NorthwindContext())

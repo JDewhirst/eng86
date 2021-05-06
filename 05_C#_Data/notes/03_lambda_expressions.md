@@ -13,6 +13,8 @@ A lambda expression is a method which
 
 ## Anonymous Methods
 
+A lambda expression is an evolution of anonymous methods, which people don't really use anymore. It's used there and then in a method that takes a method as a parameter, using the delegate keyword.
+
 Statement lambdas `(input parameters) => { sequence of methods}`
 
 ## More CRUD operations & SQL queries using method syntax

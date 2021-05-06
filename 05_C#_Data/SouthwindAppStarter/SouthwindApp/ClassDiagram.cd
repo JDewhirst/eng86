@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SouthwindApp.Order">
+    <Position X="5" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>GAEAAAAAAAAAAAAAABAAAAAAAAAEABBAAAAAAAAAAAA=</HashCode>
+      <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Customer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SouthwindApp.OrderDetail">
+    <Position X="1.75" Y="1.5" Width="1.75" />
+    <AssociationLine Name="Order" Type="SouthwindApp.Order" ManuallyRouted="true">
+      <Path>
+        <Point X="3.5" Y="2.436" />
+        <Point X="5" Y="2.436" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.101" Y="0.06" Height="0.182" Width="0.61" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>MAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAgQAAAAA=</HashCode>
+      <FileName>OrderDetail.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Order" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SouthwindApp.Customer">
+    <Position X="8.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAIIAAgAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -404,8 +404,12 @@ namespace CodeFromNorthwindBusiness
                     //Console.WriteLine(OrderWithHighestDiscount.Max(x => x.Discount));
 
                 }
-                
 
+                //// SQL Practical Exercise Part 2
+                {
+
+                }
+                
             }
 
             static bool isYoung(Person P)

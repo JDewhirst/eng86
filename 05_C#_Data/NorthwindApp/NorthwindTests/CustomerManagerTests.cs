@@ -30,7 +30,10 @@ namespace NorthwindTests
         {
             using (var db = new NorthwindContext())
             {
-
+                var numCustomers = db.Customers.Count();
+                _customerManager.CreateCustomer("MANDA", "Nish Mandal", "Sparta Global", "Birmingham");
+                var result = db.Customers.Count();
+                Assert.AreEqual(1, result - numCustomers);
             }
         }
 
@@ -39,7 +42,13 @@ namespace NorthwindTests
         {
             using (var db = new NorthwindContext())
             {
-
+                var newCust = new Customer() { CustomerId = "MANDA", ContactName = "Nish Mandal", CompanyName = "Sparta Global" };
+                db.Customers.Add(newCust);
+                db.SaveChanges();
+                var originalCustomer = db.Customers.Find("MANDA");
+                _customerManager.UpdateCustomer("MANDA", "Nish Kumar", "Edinburgh", "ED00 45F", "UK");
+                var resultCustomer = db.Customers.Find("MANDA");
+                Assert.AreNotEqual(originalCustomer.ContactName, resultCustomer.ContactName);
             }
         }
 
@@ -49,7 +58,12 @@ namespace NorthwindTests
         {
             using (var db = new NorthwindContext())
             {
-
+                var newCust = new Customer() { CustomerId = "MANDA", ContactName = "Nish Mandal", CompanyName = "Sparta Global" };
+                db.Customers.Add(newCust);
+                db.SaveChanges();
+                _customerManager.DeleteCustomer("MANDA");
+                var MANDACount = db.Customers.Where(c => c.CustomerId == "MANDA").Count();
+                Assert.AreEqual(0, MANDACount);
             }
         }
     
