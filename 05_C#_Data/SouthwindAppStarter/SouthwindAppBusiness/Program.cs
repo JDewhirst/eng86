@@ -8,7 +8,7 @@ namespace SouthwindAppBusiness
     {
         static void Main(string[] args)
         {
-            var _crudManager = new CRUDManager();
+            var _crudManager = new EmployeeManager();
             //_crudManager.CreateEmployee("WAYNE", "Bruce Wayne", "GO4 114M", "Gotham");
             //_crudManager.CreateEmployee("DEWHI", "Jack Dewhirst", "HU5 5QG", "Hull");
 

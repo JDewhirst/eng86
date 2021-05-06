@@ -7,7 +7,7 @@ using SouthwindApp;
 
 namespace SouthwindAppBusiness
 {
-    public class CRUDManager
+    public class EmployeeManager
     {
         public Customer SelectedCustomer { get; set; }
 
@@ -77,6 +77,20 @@ namespace SouthwindAppBusiness
                     select c;
 
                 db.Customers.RemoveRange(selectedCustomer);
+                db.SaveChanges();
+            }
+        }
+
+        public void DeleteEmployee(string employeeID)
+        {
+            using (var db = new SouthwindContext())
+            {
+                var selectedEmployee =
+                    from e in db.Employees
+                    where e.EmployeeId == employeeID
+                    select e;
+
+                db.Employees.RemoveRange(selectedEmployee);
                 db.SaveChanges();
             }
         }
