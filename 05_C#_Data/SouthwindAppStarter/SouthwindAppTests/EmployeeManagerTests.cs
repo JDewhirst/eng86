@@ -16,9 +16,9 @@ namespace SouthwindAppTests
             using (var db = new SouthwindContext())
             {
                 var selectedEmployee =
-                from e in db.Employees
-                where e.EmployeeId == "MANDA"
-                select e;
+                    from e in db.Employees
+                    where e.EmployeeId == "MANDA"
+                    select e;
 
                 db.Employees.RemoveRange(selectedEmployee);
                 db.SaveChanges();
