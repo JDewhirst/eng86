@@ -15,5 +15,12 @@ namespace SouthwindApp
         public string Country { get; set; }
         public string PostalCode { get; set; }
         public virtual ICollection<Order> Orders {get; set;}
+
+        public virtual Employee Employee { get; set; }
+
+        public override string ToString()
+        {
+            return $"{ContactName} - {PostalCode}";
+        }
     }
 }

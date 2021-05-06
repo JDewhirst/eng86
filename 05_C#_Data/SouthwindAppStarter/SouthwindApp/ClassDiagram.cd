@@ -32,8 +32,15 @@
   <Class Name="SouthwindApp.Customer">
     <Position X="8.75" Y="1.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAIIAAgAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAAAAAAAMIAAgAAAACAIAABAAAAAAAAAAAAA=</HashCode>
       <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SouthwindApp.Employee">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEIAAAAAAAAAAAMIAAAAAAAAAIAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Employee.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
