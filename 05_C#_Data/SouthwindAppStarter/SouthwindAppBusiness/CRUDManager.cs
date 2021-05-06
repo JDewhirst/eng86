@@ -7,7 +7,7 @@ using SouthwindApp;
 
 namespace SouthwindAppBusiness
 {
-    public class CustomerManager
+    public class CRUDManager
     {
         public Customer SelectedCustomer { get; set; }
 
@@ -41,6 +41,24 @@ namespace SouthwindAppBusiness
             using (var db = new SouthwindContext())
             {
                 return db.Customers.ToList();
+            }
+        }
+
+        public void CreateEmployee(string employeeID, string employeeName, string postalCode, string city = null)
+        {
+            var newEmployee = new Employee() { EmployeeId = employeeID, EmployeeName = employeeName, City = city, PostalCode = postalCode };
+            using (var db = new SouthwindContext())
+            {
+                db.Employees.Add(newEmployee);
+                db.SaveChanges();
+            }
+        }
+
+        public List<Employee> RetrieveAllEmployees()
+        {
+            using (var db = new SouthwindContext())
+            {
+                return db.Employees.ToList();
             }
         }
 
