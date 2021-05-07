@@ -16,5 +16,10 @@ namespace feudalismData
         public int ProvinceId { get; set; }
         public virtual ICollection<Province> Provinces { get; set; }
 
+        public override string ToString()
+        {
+            return $"{CourtesyTitle} {CharacterName} {Dynasty}";
+        }
+
     }
 }

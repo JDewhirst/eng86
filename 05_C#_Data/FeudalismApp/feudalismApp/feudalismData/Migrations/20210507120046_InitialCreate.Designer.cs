@@ -9,7 +9,7 @@ using feudalismData;
 namespace feudalismData.Migrations
 {
     [DbContext(typeof(FeudalismContext))]
-    [Migration("20210507112542_InitialCreate")]
+    [Migration("20210507120046_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,8 +58,8 @@ namespace feudalismData.Migrations
                     b.Property<string>("ProvinceName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TerrainDetailId")
-                        .HasColumnType("int");
+                    b.Property<string>("TerrainDetailId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ProvinceId");
 
@@ -72,10 +72,8 @@ namespace feudalismData.Migrations
 
             modelBuilder.Entity("feudalismData.TerrainDetail", b =>
                 {
-                    b.Property<int>("TerrainDetailId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("TerrainDetailId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("TerrainDescription")
                         .HasColumnType("nvarchar(max)");
@@ -96,9 +94,7 @@ namespace feudalismData.Migrations
 
                     b.HasOne("feudalismData.TerrainDetail", "TerrainDetail")
                         .WithMany("Provinces")
-                        .HasForeignKey("TerrainDetailId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TerrainDetailId");
 
                     b.Navigation("Character");
 

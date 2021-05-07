@@ -10,7 +10,7 @@ namespace feudalismData
         {
             Provinces = new HashSet<Province>();
         }
-        public int TerrainDetailId { get; set; }
+        public string TerrainDetailId { get; set; }
         public string TerrainDescription { get; set; }
         public int TravelSpeed { get; set; }
 
@@ -19,7 +19,7 @@ namespace feudalismData
 
         public override string ToString()
         {
-            return $"ID{TerrainDetailId} - {TerrainDescription} - {TravelSpeed} {(TravelSpeed > 1 ? "hexes" : "hex")} per watch";
+            return $"{TerrainDetailId} - {TravelSpeed} {(TravelSpeed > 1 ? "hexes" : "hex")} per watch - {TerrainDescription}";
         }
     }
 }

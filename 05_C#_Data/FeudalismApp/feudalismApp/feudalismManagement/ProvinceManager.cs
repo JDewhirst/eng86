@@ -11,7 +11,7 @@ namespace feudalismManagement
     {
         public Province SelectedProvince { get; set; }
 
-        public void CreateProvince(int terrainId, int population, string provinceName = null)
+        public void CreateProvince(string terrainId, int population, string provinceName = null)
         {
             var newProvince = new Province() { TerrainDetailId = terrainId, ProvinceName = provinceName, Population = population };
             using (var db = new FeudalismContext())
@@ -31,7 +31,7 @@ namespace feudalismManagement
             }
         }
 
-        public void UpdateProvince(int provinceId, int terrainId, string provinceName, int population)
+        public void UpdateProvince(int provinceId, string terrainId, string provinceName, int population)
         {
             using (var db = new FeudalismContext())
             {

@@ -17,7 +17,7 @@ namespace FeudalismTests
             {
                 var selectedTerrain =
                     from td in db.TerrainDetails
-                    where td.TerrainDescription == "Lava flow"
+                    where td.TerrainDetailId == "LavaFlow"
                     select td;
 
                 db.TerrainDetails.RemoveRange(selectedTerrain);
@@ -31,7 +31,7 @@ namespace FeudalismTests
             using (var db = new FeudalismContext())
             {
                 var numTerrains = db.TerrainDetails.Count();
-                _terrainManager.CreateTerrain("Lava flow", 10);
+                _terrainManager.CreateTerrain("LavaFlow", 10);
                 var result = db.TerrainDetails.Count();
                 Assert.AreEqual(1, result - numTerrains);
             }
@@ -42,12 +42,12 @@ namespace FeudalismTests
         {
             using (var db = new FeudalismContext())
             {
-                var newTerrain = new TerrainDetail() {TerrainDescription = "Lava Flow", TravelSpeed = 10 };
+                var newTerrain = new TerrainDetail() {TerrainDescription = "LavaFlow", TravelSpeed = 10 };
                 db.TerrainDetails.Add(newTerrain);
                 db.SaveChanges();
-                var terrainID = db.TerrainDetails.Where(td => td.TerrainDescription == "Lava Flow").FirstOrDefault().TerrainDetailId;
+                var terrainID = db.TerrainDetails.Where(td => td.TerrainDetailId == "LavaFlow").FirstOrDefault().TerrainDetailId;
                 _terrainManager.DeleteTerrain(terrainID);
-                var LAVACount = db.TerrainDetails.Where(td => td.TerrainDescription == "Lava Flow").Count();
+                var LAVACount = db.TerrainDetails.Where(td => td.TerrainDetailId == "LavaFlow").Count();
                 Assert.AreEqual(0, LAVACount);
             }
         }
@@ -61,7 +61,7 @@ namespace FeudalismTests
             {
                 var selectedTerrain =
                     from td in db.TerrainDetails
-                    where td.TerrainDescription == "Lava flow"
+                    where td.TerrainDetailId == "LavaFlow"
                     select td;
 
                 db.TerrainDetails.RemoveRange(selectedTerrain);

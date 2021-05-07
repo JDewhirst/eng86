@@ -12,9 +12,9 @@ namespace feudalismManagement
 
         public TerrainDetail SelectedTerrain { get; set; }
 
-        public void CreateTerrain(string terrainDescription, int travelSpeed)
+        public void CreateTerrain(string terrainDetailId, int travelSpeed, string terrainDescription = "")
         {
-            var newTerrain = new TerrainDetail() { TerrainDescription = terrainDescription, TravelSpeed = travelSpeed };
+            var newTerrain = new TerrainDetail() {TerrainDetailId= terrainDetailId, TerrainDescription = terrainDescription, TravelSpeed = travelSpeed };
             using (var db = new FeudalismContext())
             {
                 db.TerrainDetails.Add(newTerrain);
@@ -22,7 +22,7 @@ namespace feudalismManagement
             }
         }
 
-        public void DeleteTerrain(int terrainId)
+        public void DeleteTerrain(string terrainId)
         {
             using (var db = new FeudalismContext())
             {
@@ -32,7 +32,7 @@ namespace feudalismManagement
             }
         }
 
-        public void UpdateTerrain(int terrainId, string terrainDescription, int travelSpeed)
+        public void UpdateTerrain(string terrainId, int travelSpeed, string terrainDescription)
         {
             using (var db = new FeudalismContext())
             {

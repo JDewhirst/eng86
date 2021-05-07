@@ -25,8 +25,7 @@ namespace feudalismData.Migrations
                 name: "TerrainDetails",
                 columns: table => new
                 {
-                    TerrainDetailId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TerrainDetailId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     TerrainDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TravelSpeed = table.Column<int>(type: "int", nullable: false)
                 },
@@ -41,7 +40,7 @@ namespace feudalismData.Migrations
                 {
                     ProvinceId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TerrainDetailId = table.Column<int>(type: "int", nullable: false),
+                    TerrainDetailId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     CharacterId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     ProvinceName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Population = table.Column<int>(type: "int", nullable: false)
@@ -60,7 +59,7 @@ namespace feudalismData.Migrations
                         column: x => x.TerrainDetailId,
                         principalTable: "TerrainDetails",
                         principalColumn: "TerrainDetailId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
