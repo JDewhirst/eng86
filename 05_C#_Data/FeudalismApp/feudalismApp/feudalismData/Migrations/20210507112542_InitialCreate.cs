@@ -41,38 +41,37 @@ namespace feudalismData.Migrations
                 {
                     ProvinceId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TerrainId = table.Column<int>(type: "int", nullable: false),
+                    TerrainDetailId = table.Column<int>(type: "int", nullable: false),
+                    CharacterId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     ProvinceName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Population = table.Column<int>(type: "int", nullable: false),
-                    TerrainDetailsTerrainDetailId = table.Column<int>(type: "int", nullable: true),
-                    CharactersCharacterId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    Population = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Provinces", x => x.ProvinceId);
                     table.ForeignKey(
-                        name: "FK_Provinces_Characters_CharactersCharacterId",
-                        column: x => x.CharactersCharacterId,
+                        name: "FK_Provinces_Characters_CharacterId",
+                        column: x => x.CharacterId,
                         principalTable: "Characters",
                         principalColumn: "CharacterId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Provinces_TerrainDetails_TerrainDetailsTerrainDetailId",
-                        column: x => x.TerrainDetailsTerrainDetailId,
+                        name: "FK_Provinces_TerrainDetails_TerrainDetailId",
+                        column: x => x.TerrainDetailId,
                         principalTable: "TerrainDetails",
                         principalColumn: "TerrainDetailId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Provinces_CharactersCharacterId",
+                name: "IX_Provinces_CharacterId",
                 table: "Provinces",
-                column: "CharactersCharacterId");
+                column: "CharacterId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Provinces_TerrainDetailsTerrainDetailId",
+                name: "IX_Provinces_TerrainDetailId",
                 table: "Provinces",
-                column: "TerrainDetailsTerrainDetailId");
+                column: "TerrainDetailId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

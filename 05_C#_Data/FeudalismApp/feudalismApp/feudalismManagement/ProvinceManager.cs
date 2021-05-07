@@ -13,7 +13,7 @@ namespace feudalismManagement
 
         public void CreateProvince(int terrainId, int population, string provinceName = null)
         {
-            var newProvince = new Province() { TerrainId = terrainId, ProvinceName = provinceName, Population = population };
+            var newProvince = new Province() { TerrainDetailId = terrainId, ProvinceName = provinceName, Population = population };
             using (var db = new FeudalismContext())
             {
                 db.Provinces.Add(newProvince);
@@ -36,7 +36,7 @@ namespace feudalismManagement
             using (var db = new FeudalismContext())
             {
                 SelectedProvince = db.Provinces.Where(p => p.ProvinceId == provinceId).FirstOrDefault();
-                SelectedProvince.TerrainId = terrainId;
+                SelectedProvince.TerrainDetailId = terrainId;
                 SelectedProvince.ProvinceName = provinceName;
                 SelectedProvince.Population = population;
                 db.SaveChanges();
