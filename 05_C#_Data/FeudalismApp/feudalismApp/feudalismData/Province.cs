@@ -11,8 +11,14 @@
         public string ProvinceName { get; set; }
         public int Population { get; set; }
 
-        public virtual TerrainDetail TerrainDetails { get; set; }
-        public virtual Character Characters { get; set; }
+        public int CharacterID { get; set }
 
+        public virtual TerrainDetail TerrainDetail { get; set; }
+        public virtual Character Character { get; set; }
+
+        public override string ToString()
+        {
+            return $"{ProvinceId}: {(ProvinceName is null ? "Un-named" : ProvinceName)} Population {Population} ";
+        }
     }
 }
