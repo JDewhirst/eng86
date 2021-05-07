@@ -16,5 +16,10 @@ namespace feudalismData
 
 
         public virtual ICollection<Province> Provinces { get; set; }
+
+        public override string ToString()
+        {
+            return $"ID{TerrainDetailId} - {TerrainDescription} - {TravelSpeed} {(TravelSpeed > 1 ? "hexes" : "hex")} per watch";
+        }
     }
 }
