@@ -36,5 +36,36 @@ namespace feudalismManagement
                 db.SaveChanges();
             }
         }
+        public List<Character> ListAllCharacters()
+        {
+            using (var db = new FeudalismContext())
+            {
+                return db.Characters.ToList();
+            }
+        }
+
+        public List<Character> ListUnlandedCharacters()
+        {
+            using (var db = new FeudalismContext())
+            {
+                return db.Characters.Where(c => c.ProvinceId == 0).ToList();
+            }
+        }
+
+        public List<Character> ListLandedCharacters()
+        {
+            using (var db = new FeudalismContext())
+            {
+                return db.Characters.Where(c => c.ProvinceId != 0).ToList();
+            }
+        }
+
+        //public List<Character> ListLandedIndependentCharacters()
+        //{
+        //    using (var db = new FeudalismContext())
+        //    {
+        //        return db.Characters.Where(c => c.ProvinceId == !0 && c.LordId != null).ToList();
+        //    }
+        //}
     }
 }

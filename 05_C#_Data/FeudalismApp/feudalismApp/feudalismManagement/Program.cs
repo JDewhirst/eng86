@@ -27,11 +27,12 @@ namespace feudalismManagement
             //_terrainManager.UpdateTerrain("forest", 2, " A forest, also referred to as a wood or the woods, is an area with a high density of trees.");
 
             //_characterManager.CreateCharacter("WdNKE", "William", "de Normandie", "His Grace");
-            using (var db = new FeudalismContext())
-            {
-                var character = db.Characters.Where(c => c.CharacterId == "WdNKE").FirstOrDefault();
-                Console.WriteLine(character);
-            }
+            _characterManager.CreateCharacter("JKDY", "John", "Kristothenum", "His Lordship");
+            //using (var db = new FeudalismContext())
+            //{
+            //    var character = db.Characters.Where(c => c.CharacterId == "WdNKE").FirstOrDefault();
+            //    Console.WriteLine(character);
+            //}
         }
     }
 }
