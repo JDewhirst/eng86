@@ -11,7 +11,7 @@ namespace feudalismManagement
     {
         public Character SelectedCharacter { get; set; }
 
-        public void CreateCharacter(string charId, string charName, string dynasty, string courtseyTitle, int? provinceId = null)
+        public void CreateCharacter(string charId, string charName, string dynasty, string courtseyTitle, int? provinceId = null, string? overlordId = null )
         {
             var newCharacter = new Character()
             {
@@ -20,7 +20,10 @@ namespace feudalismManagement
                 Dynasty = dynasty,
                 CourtesyTitle = courtseyTitle
             };
-            using (var db = new FeudalismContext())
+            if (provinceId is not null) { newCharacter.ProvinceId = (int)provinceId; }
+            if (overlordId is not null) { newCharacter.OverlordId = (string)overlordId; }
+
+                using (var db = new FeudalismContext())
             {
                 db.Characters.Add(newCharacter);
                 db.SaveChanges();
@@ -67,5 +70,15 @@ namespace feudalismManagement
         //        return db.Characters.Where(c => c.ProvinceId == !0 && c.LordId != null).ToList();
         //    }
         //}
-    }
+
+        public List<Character> ListCharacterDirectSubordinates(string charId)
+        {
+            using (var db = new FeudalismContext())
+            {
+                return db.Characters.Where(c => c.OverlordId == charId).ToList();
+            }
+        }
+
+
+}
 }
