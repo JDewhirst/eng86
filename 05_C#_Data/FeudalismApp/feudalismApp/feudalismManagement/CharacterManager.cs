@@ -7,10 +7,14 @@ using feudalismData;
 
 namespace feudalismManagement
 {
-    class CharacterManager
+    public class CharacterManager
     {
         public Character SelectedCharacter { get; set; }
 
+        public void SetSelectedCharacter(object selectedCharacter)
+        {
+            SelectedCharacter = (Character)selectedCharacter;
+        }
         public void CreateCharacter(string charId, string charName, string dynasty, string courtseyTitle, int? provinceId = null, string? overlordId = null )
         {
             var newCharacter = new Character()

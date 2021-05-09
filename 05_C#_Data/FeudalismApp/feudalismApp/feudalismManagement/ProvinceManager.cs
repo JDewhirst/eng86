@@ -51,5 +51,29 @@ namespace feudalismManagement
             }
         }
 
+        public List<Province>ListPopulatedProvinces()
+        {
+            using (var db = new FeudalismContext())
+            {
+                return db.Provinces.Where(p => p.Population != 0).ToList();
+            }
+        }
+
+        public List<Province>ListUninhabitedProvinces()
+        {
+            using (var db = new FeudalismContext())
+            {
+                return db.Provinces.Where(p => p.Population == 0).ToList();
+            }
+        }
+
+        public List<Province>ListProvinceOwner()
+        {
+            using (var db = new FeudalismContext())
+            {
+                return db.Provinces.ToList();
+            }
+        }
+
     }
 }

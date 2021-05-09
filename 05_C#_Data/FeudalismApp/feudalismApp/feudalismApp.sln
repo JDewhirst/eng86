@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "feudalismData", "feudalismData\feudalismData.csproj", "{5920D9CA-022D-4D90-B398-EF78168B0AB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "feudalismManagement", "feudalismManagement\feudalismManagement.csproj", "{710F5C8E-1A97-4F36-B0DE-179314DCBB33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "feudalismManagement", "feudalismManagement\feudalismManagement.csproj", "{710F5C8E-1A97-4F36-B0DE-179314DCBB33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeudalismTests", "FeudalismTests\FeudalismTests.csproj", "{C346E05C-0B5C-4485-A71B-D24A6A172E79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeudalismTests", "FeudalismTests\FeudalismTests.csproj", "{C346E05C-0B5C-4485-A71B-D24A6A172E79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "feudalismGUI", "feudalismGUI\feudalismGUI.csproj", "{E2EA0748-3247-4376-BD3E-FAD48CD33124}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{C346E05C-0B5C-4485-A71B-D24A6A172E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C346E05C-0B5C-4485-A71B-D24A6A172E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C346E05C-0B5C-4485-A71B-D24A6A172E79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2EA0748-3247-4376-BD3E-FAD48CD33124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2EA0748-3247-4376-BD3E-FAD48CD33124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2EA0748-3247-4376-BD3E-FAD48CD33124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2EA0748-3247-4376-BD3E-FAD48CD33124}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

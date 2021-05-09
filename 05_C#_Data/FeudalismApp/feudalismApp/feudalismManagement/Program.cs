@@ -32,22 +32,23 @@ namespace feudalismManagement
             //_characterManager.CreateCharacter("JKDY", "John", "Kristothenum", "His Grace", 2, "WdNKE");
             //_characterManager.CreateCharacter("RdNDL", "Richard", "de Normandie", "His Grace", 4, "WdNKE");
             //_characterManager.CreateCharacter("BSBG", "Boris", "Sakinov", "His Lordship", 1, "JKDY");
-            _characterManager.CreateCharacter("JLk", "James", "Lancaster", "Sir", 0, "JKDY");
-            _characterManager.CreateCharacter("LVk", "Lousie", "Vitillean", "Sir", 0);
+            //_characterManager.CreateCharacter("JLk", "James", "Lancaster", "Sir", 0, "JKDY");
+            //_characterManager.CreateCharacter("LVk", "Lousie", "Vitillean", "Sir", 0);
 
             //_characterManager.ListAllCharacters().ForEach(c => Console.WriteLine(c));
-           
 
-            var directSubordinatesOfKingWill = _characterManager.ListCharacterDirectSubordinates("WdNKE");
-            var directSuborddinatesOfDukeJohn = _characterManager.ListCharacterDirectSubordinates("JKDY");
-            Console.WriteLine($"Subordinates of King William");
-            directSubordinatesOfKingWill.ForEach(s => Console.WriteLine($"      {s}"));
-            Console.WriteLine($"Subordinates of Duke John");
-            directSuborddinatesOfDukeJohn.ForEach(s => Console.WriteLine($"     {s}"));
 
-            Console.WriteLine("Unlanded characters");
-            var unlanded = _characterManager.ListUnlandedCharacters();
-            unlanded.ForEach(ul => Console.WriteLine($"     {ul}"));
+            //var directSubordinatesOfKingWill = _characterManager.ListCharacterDirectSubordinates("WdNKE");
+            //var directSuborddinatesOfDukeJohn = _characterManager.ListCharacterDirectSubordinates("JKDY");
+            //Console.WriteLine($"Subordinates of King William");
+            //directSubordinatesOfKingWill.ForEach(s => Console.WriteLine($"      {s}"));
+            //Console.WriteLine($"Subordinates of Duke John");
+            //directSuborddinatesOfDukeJohn.ForEach(s => Console.WriteLine($"     {s}"));
+
+            //Console.WriteLine("Unlanded characters");
+            //var unlanded = _characterManager.ListUnlandedCharacters();
+            //unlanded.ForEach(ul => Console.WriteLine($"     {ul}"));
+            _provinceManager.ListProvinceOwner().ForEach(p => Console.WriteLine($" {p.ProvinceId} - {p.ProvinceName} - {p.Character}"));
         }
 
     }
