@@ -81,11 +81,11 @@ The scope of connection is limited to the using block. When connection goes out 
 
 # Entity Framework
 
-.NET. Is an object-relational mapper that enables .NET devs to work with a database using .NET objects. 
+.NET (something). Is an object-relational mapper that enables .NET devs to work with a database using .NET objects. 
 
 The newest version, Entity Framework Core, runs in .NET Core.
 
-This framework maps C# objects to relational database tables. Can use same c# code with different database engines which use different flavours of SQL. Uses LINQ for queries. Unlike SQL strings get full Visual Studio and debugging support.
+This framework maps C# objects to relational database tables. Can use same c# code with different database engines which use different flavours of SQL. Uses LINQ for queries. Unlike with using raw SQL via strings you get full Visual Studio syntax highlighting and debugging support.
 
 ## Approaches
 
