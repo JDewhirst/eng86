@@ -1,6 +1,8 @@
 # The Test Process
 
-![image-20210521110730811](images\the_test_process)
+![](.\images\the_test_process.png)
+
+
 
 ## Test Planning
 
