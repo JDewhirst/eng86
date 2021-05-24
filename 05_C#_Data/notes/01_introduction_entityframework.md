@@ -103,7 +103,7 @@ Creating a model from an existing database, also known as scaffolding
 
 NorthwindContext is a subclass of DbContext, used to query the database and group together changes that are saved to the database as a unit.
 
-It has public propertis, `public virtual DbSet<customer> Customer {get; set;}` A DbSet contains all the entites of a given type that can be queried from the database.
+It has public properties, `public virtual DbSet<customer> Customer {get; set;}` A DbSet contains all the entities of a given type that can be queried from the database.
 
 Overrides two DbContext methods; OnConfiguring, OnReading
 
