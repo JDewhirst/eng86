@@ -233,3 +233,13 @@ Only need one test case to cover all of a piece of sequential code and to cover 
 - **Statement Coverage (SC)** – Check if each statement in the code has been executed at least once (i.e. total number of test cases required to execute each node at least once).
 - **Statement Testing** – A white box test design technique in which test cases are designed to execute statements.
 
+## How To Choose A Test Technique
+
+What is the type of system ? Is it safety critical ? Is it a financial system ? Is it web or cloud based ?
+
+What are the regulatory standards
+
+Customer/Contractual Requirements
+
+The Level of Risk
+
