@@ -1,4 +1,9 @@
-﻿using System;
+# Asynchronous Programming
+
+An example. By convention an async method is named MethodNameAsyncc.
+
+```c#
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -35,7 +40,7 @@ namespace AysncCake
         private static void PlayPartyGames()
         {
             Console.WriteLine("Starting games");
-            await Task.Delay(TimeSpan.FromSeconds(2));
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             Console.WriteLine("Finishing Games");
         }
 
@@ -55,3 +60,6 @@ namespace AysncCake
         }
     }
 }
+
+```
+
