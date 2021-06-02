@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -10,8 +11,9 @@ namespace AysncCake
         {
             Console.WriteLine("Welcome to my birthday party");
             HaveAParty();
-            Console.WriteLine("Thanks for a lovely party");
             Console.ReadLine();
+            Console.WriteLine("Thanks for a lovely party");
+
         }
 
         private static void HaveAParty()
@@ -22,6 +24,20 @@ namespace AysncCake
             OpenPresents();
             var cake = cakeTask.Result;
             Console.WriteLine($"Happy birthday, {name}, {cake}!!");
+            var candlesTask = cake.CandlesMelt();
+            SingHappyBirthday();
+            var candlesMelted = candlesTask.Result;
+            Console.WriteLine($"Make a wish!");
+        }
+
+        private static async void SingHappyBirthday()
+        {
+            var happyBirthday = new List<string> { "Happy Birthday to you,", "you live in a zoo.", "You look like a monkey,", "and you smell like one too!", "Hip hip!", "Hurrah", "Hip hip!", "Hurrah", "Hip hip!", "Hurrah"};
+            foreach(string line in happyBirthday)
+            {
+                await Task.Delay(TimeSpan.FromSeconds(0.7));
+                Console.WriteLine(line);
+            }
         }
 
         private static async Task<Cake> BakeCakeAsync()
@@ -35,7 +51,7 @@ namespace AysncCake
         private static void PlayPartyGames()
         {
             Console.WriteLine("Starting games");
-            await Task.Delay(TimeSpan.FromSeconds(2));
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             Console.WriteLine("Finishing Games");
         }
 
@@ -52,6 +68,18 @@ namespace AysncCake
         public override string ToString()
         {
             return "Here's a cake";
+        }
+
+        public async Task<bool> CandlesMelt()
+        {
+            Console.WriteLine("The candles will burn down in 10 seconds");
+            for (int i = 9; i > 0; i--)
+            {
+                await Task.Delay(TimeSpan.FromSeconds(1));
+                Console.WriteLine($"{i}");
+            }
+
+            return true;
         }
     }
 }
