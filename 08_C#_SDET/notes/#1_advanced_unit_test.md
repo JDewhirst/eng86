@@ -45,3 +45,4 @@ Selenium. SpecFlow allows you to specify scenarios using Gherkin and map them to
 Good tests; FIRST.
 
 Fast, Independent, Repeatable, Self-checking, Timely.
+
