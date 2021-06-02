@@ -52,9 +52,9 @@ There are five activities in a formal review; Planning, Initiate Review, Individ
 
 **Individual Review:** Reviewing all parts of the work product including the source documents. Note potential defects, questions and comments.
 
-**Issues communication and analysis:** Communicate potential defects. Analyse defects. Evaluate and document the required quality criteria (has it been met ?). Evaluate the review results against the exit criteria. 
+**Issues Communication and Analysis:** Communicate potential defects. Analyse defects. Evaluate and document the required quality criteria (has it been met ?). Evaluate the review results against the exit criteria.  (this is the actual review)
 
-**Fixing and reporting:** Create defect reports. Fix the defects (typically done y the Author). Record updated status of defects (in formal reviews). Gather metrics e.g. how much time was spent on the review, how many defects found. Check exit criteria.
+**Fixing and Reporting:** Create defect reports. Fix the defects (typically done y the Author). Record updated status of defects (in formal reviews). Gather metrics e.g. how much time was spent on the review, how many defects found. Check exit criteria.
 
 ## Applying Review Techniques
 

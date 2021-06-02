@@ -128,12 +128,12 @@ The size of the company, the time available, what resources are available, budge
 
 Does the system meet all of the requirements ? This is a question that should have been asked frequently throughout the cycle. Typically verifies the functional fitness of the system for business users. Note: Acceptance Testing can take place before System Testing starts.
 
-**Operation acceptance testing**: Aka op readiness testing. Checking that the processes and procedures are in place to allow the system to be used and maintained. It's a crucial element for making sure the product will be functional in its environment. Additional aspects to think about are; can if be backed up ? are there procedures for disaster recovery ? is the end user trained ? what are the maintenance and security procedures ?
+**Operation Acceptance Testing**: Aka op readiness testing. Checking that the processes and procedures are in place to allow the system to be used and maintained. It's a crucial element for making sure the product will be functional in its environment. Additional aspects to think about are; can if be backed up ? are there procedures for disaster recovery ? is the end user trained ? what are the maintenance and security procedures ?
 
 **Contract and Regulation Acceptance Testing**
 
 * Contractual: Acceptance criteria outlined in a contract
-* Regulations: Some industries have rigid regulations that must be abided bby, governmental, legal, etc.
+* Regulations: Some industries have rigid regulations that must be abided by, governmental, legal, etc.
 
 **Alpha/Beta Testing**
 
@@ -155,7 +155,7 @@ Looks at the specific functionality of a system. Also called specification-based
 
 ## Non-functional Testing
 
-Testing of the quality characteristics of the  component or system. (note: can make use of``` Blackbox techniques) Can be performed at all test levels.
+Testing of the quality characteristics of the  component or system. (note: can make use of Blackbox techniques) Can be performed at all test levels.
 
 ## Structural
 

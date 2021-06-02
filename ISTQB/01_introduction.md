@@ -46,11 +46,11 @@ http://glossary.istq.org
 
 1. Testing shows the presence of bugs
 2. Exhaustive testing is impossible
-3. Early testing
-4. Defect clustering
-5. The pesticide paradox 
+3. Early testing - saves money
+4. Defect clustering - pareto principle. 20% code responsible for 80% of bugs
+5. The pesticide paradox - Applying pesticide may increase the abundance of the pest. Re-testing causes immunity.
 6. Testing is context dependant
-7. Absence of errors fallacy
+7. Absence of errors fallacy - absence of evidence is not evidence of absence
 
 ## Testing's Contribution to Success
 
