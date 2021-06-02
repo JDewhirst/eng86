@@ -10,36 +10,41 @@ namespace ClassesApp
         LaserGun,
         BubbleBlaster
     }
-    public class Weapon : IShootable
+    public abstract class Weapon : IShootable
     {
-        private WeaponType _weaponType;
         private string _brand;
-        public Weapon(WeaponType type, string brand)
+        public Weapon(string brand)
         {
-            _weaponType = type;
             _brand = brand;
         }
         public override string ToString()
         {
-            string result = $"{base.ToString()} - {_brand}";
-            switch (_weaponType)
-            {
-                case WeaponType.Waterpistol:
-                    result = "Splash!! " + result;
-                     break;
-                case WeaponType.BubbleBlaster:
-                    result = "Bubbles... " + result;
-                    break;
-                case WeaponType.LaserGun:
-                    result = "Zing!! " + result;
-                    break;
-            }
-            return result;
+            return $"{base.ToString()} - {_brand} ";
         }
 
         public virtual string Shoot()
         {
-            return $"Shooting a {_weaponType}";
+            return $"Shooting a {ToString()}";
+        }
+    }
+
+    public class LaserGun : Weapon
+    {
+        public LaserGun(string brand) : base(brand) { }
+
+        public override string Shoot()
+        {
+            return $"Zing!!! {base.Shoot()}";
+        }
+    }
+
+    public class WaterPistol : Weapon
+    {
+        public WaterPistol(string brand) : base(brand) { }
+
+        public override string Shoot()
+        {
+            return $"Splash!!! {base.Shoot()}";
         }
     }
 }

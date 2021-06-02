@@ -16,7 +16,7 @@ namespace ClassesApp
         }
         static void Main(string[] args)
         {
-            BaseClass p = new BaseClass("Katie", "King");
+            Person p = new Person("Katie", "King");
             Hunter h = new Hunter("Marion", "Jones", new Camera("Leica")) { Age = 32 };
             //Console.WriteLine(h.Age);
             //Console.WriteLine(h.Shoot());
@@ -75,9 +75,9 @@ namespace ClassesApp
 
             Console.WriteLine();
             var theWeapons = new List<IShootable>();
-            theWeapons.Add(new Weapon(WeaponType.LaserGun, "ToysRUs"));
-            theWeapons.Add(new Weapon(WeaponType.Waterpistol, "Supersoaker"));
-            theWeapons.Add(new Weapon(WeaponType.LaserGun, "ZippaZap"));
+            theWeapons.Add(new LaserGun("ToysRUs"));
+            theWeapons.Add(new WaterPistol("Supersoaker"));
+            theWeapons.Add(new LaserGun("ZippaZap"));
             theWeapons.Add(new Hunter("Cathy", "French", new Camera("Minolta")));
             theWeapons.Add(new Camera("Pentax"));
             foreach (var w in theWeapons)
@@ -87,8 +87,8 @@ namespace ClassesApp
             Console.WriteLine();
             Console.WriteLine("Polymorphic shootout");
             Camera pentax = new Camera("Pentax");
-            var pistol = new Weapon(WeaponType.Waterpistol, "Supersoaker");
-            var laserGun = new Weapon(WeaponType.LaserGun, "ZippaZap");
+            var pistol = new WaterPistol("Supersoaker");
+            var laserGun = new LaserGun("ZippaZap");
             Hunter nish = new Hunter("Nish", "Mandal", pentax);
             Console.WriteLine(nish.Shoot());
             nish.Shooter = pistol;
