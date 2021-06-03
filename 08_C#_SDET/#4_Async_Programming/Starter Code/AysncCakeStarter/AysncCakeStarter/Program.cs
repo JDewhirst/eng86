@@ -26,7 +26,7 @@ namespace AysncCake
             Console.WriteLine($"Happy birthday, {name}, {cake}!!");
             var candlesTask = cake.CandlesMelt();
             SingHappyBirthday();
-            var candlesMelted = candlesTask.Result;
+            candlesTask.Wait();
             Console.WriteLine($"Make a wish!");
         }
 
