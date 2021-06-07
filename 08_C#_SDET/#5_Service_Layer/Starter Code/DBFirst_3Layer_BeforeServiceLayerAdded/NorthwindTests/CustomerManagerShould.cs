@@ -12,6 +12,7 @@ namespace NorthwindTests
 
         //// Using moq as DummyE
         private CustomerManager _sut;
+
         [Test]
         public void BeAbleToConstruct_CustomerManager_ThisWontWork()
         {
@@ -149,6 +150,20 @@ namespace NorthwindTests
             // Act
             _sut.UpdateCustomer("NAGLE", It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>());
             mockCustomerService.Verify(cs => cs.SaveCustomerChanges(), Times.Once);
+        }
+
+        [Test]
+        public void NotCallSaveCustomerChanges_WhenUpdateIsCalled_WithInvalidId()
+        {
+            // Arrange
+            var mockCustomerService = new Mock<ICustomerService>();
+            mockCustomerService.Setup(cs => cs.GetCustomerById(It.IsAny<string>())).Returns((Customer)null);
+            _sut = new CustomerManager(mockCustomerService.Object);
+
+            // Act
+            _sut.UpdateCustomer("NAGLE", It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>());
+            mockCustomerService.Verify(cs => cs.SaveCustomerChanges(), Times.Never);
+
         }
 
         [Test]
