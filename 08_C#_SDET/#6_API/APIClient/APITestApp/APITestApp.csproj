@@ -77,17 +77,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConfig\AppConfigReader.cs" />
-    <Compile Include="Service\BulkPostcodeService.cs" />
-    <Compile Include="Service\Model.cs" />
-    <Compile Include="Service\SingleOutcodeService.cs" />
-    <Compile Include="Service\SinglePostcodeService.cs" />
+    <Compile Include="PostcodesIOService\BulkPostcodeService.cs" />
+    <Compile Include="PostcodesIOService\DataHandling\IResponse.cs" />
+    <Compile Include="PostcodesIOService\DataHandling\Model.cs" />
+    <Compile Include="PostcodesIOService\DataHandling\DTO.cs" />
+    <Compile Include="PostcodesIOService\HTTPManager\CallManager.cs" />
+    <Compile Include="PostcodesIOService\SingleOutcodeService.cs" />
+    <Compile Include="PostcodesIOService\SinglePostcodeService.cs" />
     <Compile Include="Test\BulkPostcodeResponseTest.cs" />
     <Compile Include="Test\SinglePostcodeResponseTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test\SingleOutcodeServiceTest.cs" />
+    <Compile Include="Test\SingleOutcodeResponseTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AppConfig\app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
