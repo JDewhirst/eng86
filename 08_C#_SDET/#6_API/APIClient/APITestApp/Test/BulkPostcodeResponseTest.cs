@@ -45,7 +45,7 @@ namespace APITestApp
                 .Where(x => x["query"].ToString() == "M32 0JG").FirstOrDefault()["result"]["region"];
             Assert.That(selectedLocation.ToString(), Is.EqualTo("North West"));
         }
-        
+
         [Test]
         public void RegionForNE301DPIsCorrect()
         {
@@ -54,4 +54,52 @@ namespace APITestApp
             Assert.That(selectedLocation.ToString(), Is.EqualTo("North East"));
         }
     }
+
+    class WhenTheBulkPostcodeResponseIsCalled_WithInvalidPostcodes
+    {
+        private BulkPostcodeService _bulkPostcodeService;
+
+        [OneTimeSetUp]
+        public async Task OneTimeSetUpAsync()
+        {
+            _bulkPostcodeService = new BulkPostcodeService();
+            await _bulkPostcodeService.MakeRequestAsync(new string[] { "666666", "Rainbow", "" });
+        }
+
+        [Test]
+        public void StatusIs200()
+        {
+            Assert.That(_bulkPostcodeService.JSON_Response["status"].ToString(), Is.EqualTo("200"));
+        }
+
+        [Test]
+        public void StatusDescriptionIs()
+        {
+            Assert.That(_bulkPostcodeService.CallManager.StatusDescription, Is.EqualTo("OK"));
+        }
+
+        [Test]
+        public void ResultOfEmptyStringIsNull()
+        {
+            Assert.That(_bulkPostcodeService.JSON_Response["result"]
+                .Where(x => x["query"].ToString() == "").FirstOrDefault()["result"].ToString, Is.EqualTo(""));
+        }
+
+
+        [Test]
+        public void ResultOfRainbowIsNull()
+        {
+            Assert.That(_bulkPostcodeService.JSON_Response["result"]
+                .Where(x => x["query"].ToString() == "Rainbow").FirstOrDefault()["result"].ToString, Is.EqualTo(""));
+        }
+
+
+        [Test]
+        public void ResultOf666666IsNull()
+        {
+            Assert.That(_bulkPostcodeService.JSON_Response["result"]
+                .Where(x => x["query"].ToString() == "666666").FirstOrDefault()["result"].ToString, Is.EqualTo(""));
+        }
+    }
+
 }
