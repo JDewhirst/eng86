@@ -8,14 +8,24 @@ using System.Threading.Tasks;
 namespace APIClient
 {
 
-    #region
-    public class OutwardCodeResponse
+    public class SinglePostcodeResponse
+    {
+        [JsonProperty("status")]
+        public int Status { get; set; }
+        public PostCode result { get; set; }
+    }
+    public class SingleOutcodeResponse
     {
         public int status { get; set; }
-        public OutwardCodeResult result { get; set; }
+        public Outcode result { get; set; }
     }
 
-    public class OutwardCodeResult
+    public class BulkPostcodeResponse
+    {
+        public int status { get; set; }
+        public Result[] result { get; set; }
+    }
+    public class Outcode
     {
         public string outcode { get; set; }
         public float longitude { get; set; }
@@ -24,32 +34,19 @@ namespace APIClient
         public int eastings { get; set; }
         public string[] admin_district { get; set; }
         public string[] parish { get; set; }
-        public object[] admin_county { get; set; }
+        public string[] admin_county { get; set; }
         public string[] admin_ward { get; set; }
         public string[] country { get; set; }
     }
-    #endregion
 
-    public class BulkPostCodeResponse
-    {
-        public int status { get; set; }
-        public Result[] result { get; set; }
-    }
-
-    public class SinglePostCodeResponse
-    {
-        [JsonProperty("status")]
-        public int Status { get; set; }
-        public Postcode @result { get; set; }
-    }
 
     public class Result
     {
         public string query { get; set; }
-        public Postcode result { get; set; }
+        public PostCode result { get; set; }
     }
 
-    public class Postcode
+    public class PostCode
     {
         public string postcode { get; set; }
         public int quality { get; set; }
@@ -92,5 +89,8 @@ namespace APIClient
         public string msoa { get; set; }
         public string lau2 { get; set; }
     }
+
+
+
 
 }
