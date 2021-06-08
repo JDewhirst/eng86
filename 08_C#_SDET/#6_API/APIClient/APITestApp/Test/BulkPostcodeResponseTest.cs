@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace APITestApp
 {
-    class BulkPostcodeResponseTest
+    class WhenTheBulkPostcodeResponseIsCalled_WithValidPostcodes
     {
         private BulkPostcodeService _bulkPostcodeService;
 
@@ -31,11 +31,27 @@ namespace APITestApp
             Assert.That(_bulkPostcodeService.CallManager.StatusDescription, Is.EqualTo("OK"));
         }
 
-        //[Test]
-        //public void RegionForOX495NUIsCorrect()
-        //{
-        //    var selectedLocation = _bulkPostcodeService.JSON_Response["result"].Where(x => x["query"] == "OX49 5NU").FirstOrDefault();
-        //    Assert.That(selectedLocation.result.region, Is.EqualTo("South East"));
-        //}
+        [Test]
+        public void RegionForOX495NUIsCorrect()
+        {
+            var selectedLocation = _bulkPostcodeService.JSON_Response["result"]
+                .Where(x => x["query"].ToString() == "OX49 5NU").FirstOrDefault()["result"]["region"];
+            Assert.That(selectedLocation.ToString(), Is.EqualTo("South East"));
+        }
+        [Test]
+        public void RegionForM320JGIsCorrect()
+        {
+            var selectedLocation = _bulkPostcodeService.JSON_Response["result"]
+                .Where(x => x["query"].ToString() == "M32 0JG").FirstOrDefault()["result"]["region"];
+            Assert.That(selectedLocation.ToString(), Is.EqualTo("North West"));
+        }
+        
+        [Test]
+        public void RegionForNE301DPIsCorrect()
+        {
+            var selectedLocation = _bulkPostcodeService.JSON_Response["result"]
+                .Where(x => x["query"].ToString() == "NE30 1DP").FirstOrDefault()["result"]["region"];
+            Assert.That(selectedLocation.ToString(), Is.EqualTo("North East"));
+        }
     }
 }
