@@ -11,7 +11,7 @@ namespace APITestApp
         [OneTimeSetUp]
         public async Task OneTimeSetUpAsync()
         {
-            _bulkPostcodeService = new BulkPostcodeService();
+            _bulkPostcodeService = new BulkPostcodeService(new CallManager());
             await _bulkPostcodeService.MakeRequestAsync(new string[] { "OX49 5NU", "M32 0JG", "NE30 1DP" });
         }
 
@@ -62,7 +62,7 @@ namespace APITestApp
         [OneTimeSetUp]
         public async Task OneTimeSetUpAsync()
         {
-            _bulkPostcodeService = new BulkPostcodeService();
+            _bulkPostcodeService = new BulkPostcodeService(new CallManager());
             await _bulkPostcodeService.MakeRequestAsync(new string[] { "666666", "Rainbow", "" });
         }
 

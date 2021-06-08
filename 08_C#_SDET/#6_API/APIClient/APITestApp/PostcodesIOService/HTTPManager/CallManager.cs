@@ -8,11 +8,11 @@ using RestSharp;
 
 namespace APITestApp
 {
-    public class CallManager
+    public class CallManager : ICallManager
     {
         //Restharp object which handles comms with the API
         private readonly IRestClient _client;
-        // Capture status description
+        // Capture status descriptiond
         public string StatusDescription { get; set; }
 
         public CallManager()

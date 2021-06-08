@@ -19,7 +19,7 @@ namespace APITestApp
     {
         #region Properties
         // Call manager - we can access the method and it's propertis
-        public CallManager CallManager { get; set; }
+        public ICallManager CallManager { get; set; }
         //Newstonsoft object representing the json response
         public JObject JSON_Response { get; set; }
         // the postcode used in the API request
@@ -31,9 +31,9 @@ namespace APITestApp
 
         #endregion
 
-        public SinglePostcodeService()
+        public SinglePostcodeService(ICallManager callManager)
         {
-            CallManager = new CallManager();
+            CallManager = callManager;
             SinglePostcodeDTO = new DTO<SinglePostcodeResponse>();
         }
 

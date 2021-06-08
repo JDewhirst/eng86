@@ -11,7 +11,7 @@ namespace APITestApp
         [OneTimeSetUp]
         public async Task OneTimeSetUpAsync()
         {
-            _singleOutcodeService = new SingleOutcodeService();
+            _singleOutcodeService = new SingleOutcodeService(new CallManager());
             await _singleOutcodeService.MakeRequestAsync("YO10");
         }
 
@@ -43,7 +43,7 @@ namespace APITestApp
         [OneTimeSetUp]
         public async Task OneTimeSetUpAsync()
         {
-            _singleOutcodeService = new SingleOutcodeService();
+            _singleOutcodeService = new SingleOutcodeService(new CallManager());
             await _singleOutcodeService.MakeRequestAsync("666");
         }
 
@@ -68,7 +68,7 @@ namespace APITestApp
         [OneTimeSetUp]
         public async Task OneTimeSetUpAsync()
         {
-            _singleOutcodeService = new SingleOutcodeService();
+            _singleOutcodeService = new SingleOutcodeService(new CallManager());
             await _singleOutcodeService.MakeRequestAsync(" ");
         }
 

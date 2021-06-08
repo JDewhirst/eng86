@@ -11,16 +11,16 @@ namespace APITestApp
 {
     public class BulkPostcodeService
     {
-        public CallManager CallManager { get; set; }
+        public ICallManager CallManager { get; set; }
         public JObject JSON_Response { get; set; }
         public string[] PostcodesSelected { get; set; }
         public string StatusCode { get; set; }
         public DTO<BulkPostcodeResponse> BulkPostcodeDTO { get; set; }
         public string BulkPostcodeResponse { get; set; }
 
-        public BulkPostcodeService()
+        public BulkPostcodeService(ICallManager callManager)
         {
-            CallManager = new CallManager();
+            CallManager = callManager;
             BulkPostcodeDTO = new DTO<BulkPostcodeResponse>();
         }
 

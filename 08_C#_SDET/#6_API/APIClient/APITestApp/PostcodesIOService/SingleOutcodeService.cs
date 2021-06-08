@@ -11,15 +11,15 @@ namespace APITestApp
 {
     public class SingleOutcodeService
     {
-        public CallManager CallManager { get; set; }
+        public ICallManager CallManager { get; set; }
         public JObject JSON_Response { get; set; }
         public string OutcodeSelected { get; set; }
         public DTO<SingleOutcodeResponse> OutcodeDTO { get; set; }
         public string OutcodeResponse { get; set; }
 
-        public SingleOutcodeService()
+        public SingleOutcodeService(ICallManager callManager)
         {
-            CallManager = new CallManager();
+            CallManager = callManager;
             OutcodeDTO = new DTO<SingleOutcodeResponse>();
         }
 

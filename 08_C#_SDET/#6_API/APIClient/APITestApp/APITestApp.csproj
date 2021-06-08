@@ -81,6 +81,7 @@
     <Compile Include="PostcodesIOService\DataHandling\IResponse.cs" />
     <Compile Include="PostcodesIOService\DataHandling\Model.cs" />
     <Compile Include="PostcodesIOService\DataHandling\DTO.cs" />
+    <Compile Include="PostcodesIOService\HTTPManager\ICallManager.cs" />
     <Compile Include="PostcodesIOService\HTTPManager\CallManager.cs" />
     <Compile Include="PostcodesIOService\SingleOutcodeService.cs" />
     <Compile Include="PostcodesIOService\SinglePostcodeService.cs" />

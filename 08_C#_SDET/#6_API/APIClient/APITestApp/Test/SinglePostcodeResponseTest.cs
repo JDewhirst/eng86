@@ -11,7 +11,7 @@ namespace APITestApp
         [OneTimeSetUp]
         public async Task OneTimeSetUpAsync()
         {
-            _singlePostcodeService = new SinglePostcodeService();
+            _singlePostcodeService = new SinglePostcodeService(new CallManager());
             await _singlePostcodeService.MakeRequestAsync("EC2Y 5AS");
         }
 
@@ -55,7 +55,7 @@ namespace APITestApp
         [OneTimeSetUp]
         public async Task OneTimeSetUpAsync()
         {
-            _singlePostcodeService = new SinglePostcodeService();
+            _singlePostcodeService = new SinglePostcodeService(new CallManager());
             await _singlePostcodeService.MakeRequestAsync("666666");
         }
 
@@ -86,7 +86,7 @@ namespace APITestApp
         [OneTimeSetUp]
         public async Task OneTimeSetUpAsync()
         {
-            _singlePostcodeService = new SinglePostcodeService();
+            _singlePostcodeService = new SinglePostcodeService(new CallManager());
             await _singlePostcodeService.MakeRequestAsync("");
         }
 
